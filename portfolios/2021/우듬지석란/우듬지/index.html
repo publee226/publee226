@@ -1,0 +1,3001 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="품격있는 와인앤다인을 추구하는 와인공간 우듬지">
+    <meta name="keywords" content="나주 혁신도시, 우듬지,와인, 와인앤다인">
+    <title>우듬지</title>
+
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="../common/swipebox.min.css">
+    <link rel="stylesheet" href="../common/jquery.mCustomScrollbar.css" type="text/css">
+    <link rel="stylesheet" href="../common/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script src="../common/js/jquery.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <script src="script/swiper.js"></script>
+    <script src="../common/js/jquery.swipebox.min.js"></script>
+    <script src="../common/js/jquery-rwdImageMaps.min.js"></script>
+	  <script src="../common/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	  <script>
+      $(document).ready(function() {
+        /*Tabs*/
+        // Depth1
+        $('[class^="tab_menu"] > li > a').on('click', function(){
+          $(this).parent().siblings().removeClass('on');
+          $(this).parent().addClass('on');
+          $(this).parent().parent().siblings('[class^="tab_container"]').children('[class^="tab_content"]').hide();
+          $(this).parent().parent().siblings('[class^="tab_container"]').children('[class^="tab_content"]').eq( $(this).parent().index() ).addClass('on').fadeIn();
+        });
+        // Depth2
+        $('[class^="depth2"] > li > a').on('click', function(){
+          $(this).parent().siblings().removeClass('on');
+          $(this).parent().addClass('on');
+          $(this).parent().parent().siblings('[class^="tab_item_list"]').children().hide();
+          $(this).parent().parent().siblings('[class^="tab_item_list"]').children().eq( $(this).parent().index() ).addClass('on').fadeIn();
+        });
+
+        $(".table_wrap").mCustomScrollbar({
+          theme:"dark-3",
+          mouseWheelPixels : 300,
+          scrollInertia : 400,
+          advanced:{autoExpandHorizontalScroll:true}
+        })
+      });			
+      
+      /* 팝업창 */
+      // 쿠키 가져오기
+      var getCookie = function (cname) {
+          var name = cname + "=";
+          var ca = document.cookie.split(';');
+          for(var i=0; i<ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0)==' ') c = c.substring(1);
+              if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+          }
+          return "";
+      }
+
+      // 24시간 기준 쿠키 설정
+      var setCookie = function (cname, cvalue, exdays) {
+          var todayDate = new Date();
+          todayDate.setTime(todayDate.getTime() + (exdays*24*60*60*1000));    
+          var expires = "expires=" + todayDate.toUTCString();
+          document.cookie = cname + "=" + cvalue + "; " + expires;
+      }
+
+      var popupClose = function(){
+          if($("input[type='checkbox']").is(":checked") == true){
+              setCookie("close","Y",1);
+              //기간( ex. 1은 하루, 7은 일주일)
+          }
+          $("#divpop1, .pop-layer").hide();
+      }
+      
+      $(document).ready(function(){
+          var cookiedata = document.cookie;
+          console.log(cookiedata);
+          if(cookiedata.indexOf("close=Y")<0){
+              $("#divpop1, .pop-layer").show();
+          }else{
+              $("#divpop1, .pop-layer").hide();
+          }
+          $(".popup_close").click(function(){
+              popupClose();
+              $('.pop-layer').hide();
+          });
+      });
+	  </script>
+    <script src="script/script.js"></script>
+  </head>
+
+  <body style="background-color: rgb(0, 0, 0);">
+    <div class="divpop" id="divpop1">
+      <div class="cont">
+        <span class="pop-title">임시휴업안내</span>
+        <span class="hr"></span>
+        <p class="desc">
+          내부 사정상 우듬지를<br>
+          <span class="highlight"><b>7,8월 2개월간 휴업</b>합니다.</span>
+          <span class="em">선선한 9월에 다시 뵙겠습니다.</span>
+        </p>
+      </div>
+      <div class="pop_close">      
+        <input type="checkbox" id="chkbox" value="checkbox1">
+        <label for="chkbox"> &nbsp;오늘 하루 이 창을 열지 않음</label>
+        <a href="javascript:closeWin();" class="popup_close">닫기<img src="../common/close.png" alt=""></a>
+      </div>
+    </div>
+    <div class="pop-layer"></div>
+
+    <section class="page page1" id="page1">
+      <a class="home_btn" id="home_btn" onclick="location.href='../../index.html'" tabindex="0"><span>홈</span></a>
+      <a href="#page1" class="to-top">
+        <img src="../common/arrow-right.png" alt="첫 페이지로 이동">
+      </a>
+      <div class="main_img">
+        <img src="images/wine_mainimg.png" alt="라타슈이미지">
+      </div>
+      <div class="title"> 
+        <div class="title_wrap">
+          <h2>우 듬 지</h2>
+        <img src="images/top_logo.png" alt="logo">
+        </div>
+        <p>우듬지는 최상의 조건에서 보관되고 있는<br>
+            세계 각국 500여 종의 와인을 품격있게<br>
+            즐기실 수 있는 와인공간입니다.
+        </p>
+      </div>
+      <div class="fixedIcon">
+        <ul>
+          <li class="fixedOn"><a href="#page1"><span class="circle"></span></a><em><span class="line"></span>메인</em></li>
+          <li><a href="#page2"><span class="circle"></span></a><em><span class="line"></span>우듬지</em></li>
+          <li><a href="#page3"><span class="circle"></span></a><em><span class="line"></span>보유 와인 목록</em></li>
+          <li><a href="#page4"><span class="circle"></span></a><em><span class="line"></span>와인 리스트</em></li>
+          <li><a href="#page5"><span class="circle"></span></a><em><span class="line"></span>식사 메뉴</em></li>
+          <li><a href="#page6"><span class="circle"></span></a><em><span class="line"></span>우듬지 문화행사</em></li>
+          <li><a href="#page7"><span class="circle"></span></a><em><span class="line"></span>갤러리</em></li>
+          <li><a href="#page8"><span class="circle"></span></a><em><span class="line"></span>오시는 길</em></li>
+        </ul>
+        <a href="../seoklan/ptea.html" class="go-to-link"><span class="circle"></span><span class="line"></span><span class="link-txt">석란</span></a>
+      </div>
+      <div class="mobile_btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+    <section class="page page2 page2_all" id="page2">
+      <h2 class="hide">우듬지 소개</h2>
+      <img src="images/page3_wine_icon.png" alt="와인잔객체">
+      <img src="images/canopy-640.svg" alt="우듬지 배경" class="canopy">
+      <div class="page2_txt">
+        <p>
+          나주혁신도시를 넘어<br>우리나라 와인계에서 최고가 되고 싶은<br>소망을 담은 ‘우듬지’는<br>나무의 꼭대기 줄기를 가리키는 순우리말입니다.<br>
+        </p>
+      </div>
+    </section>
+    <div><img src="images/page2_guide_t_b.png" alt="" style="width: 100%; display:block;"></div>
+    <!-- page3 공지사항 - 210528 추가 -->
+    <section class="page notice" id="page3">
+      <div class="notice-container">
+        <div class="wine_title">
+          <h4>보유 와인 목록</h4>
+        </div>
+        <div class="b_info_box">
+          <div class="info-left">
+            <div class="img">
+              <img src="images/redwine_2.png" alt="">
+            </div>
+          </div>
+          <ul class="list_1">
+            <li>Takeout은 판매가에서 10%를 D/C 해드립니다.</li>
+            <li>우듬지에는 코라뱅(Coravin)이라는 기구가 있어 대부분의 와인을 잔술(glass wine)로 즐기실 수 있습니다. <span>(잔술 100mL 기준, 판매가의 20%)</span></li>
+            <li>실재고와 차이가 있을 수 있습니다.</li>
+            <li>주문 관련 문의는 010-9469-3354로 연락주세요.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="page page3 wine-list" id="page4">
+      <div class="page_top"></div>
+      <div class="page3_container">
+        <div class="page3_wrap_div">
+        <div class="page3_wrap">
+          <div class="tab_panel">
+            <ul class="tab_menu">
+              <li class="on"><a href="#wlist_d1_01">스파클링 와인</a></li>
+              <li><a href="#wlist_d1_02">화이트 와인</a></li>
+              <li><a href="#wlist_d1_03">레드 와인</a></li>
+              <li><a href="#wlist_d1_04">디저트 와인</a></li>
+            </ul>
+            <div class="tab_container">
+              <!-- 스파클링 와인 리스트 -->
+              <div class="tab_content on">
+                <ul class="depth2 col5">
+                  <li class="on"><a href="#w_tb_0101">프랑스 부르고뉴</a></li>
+                  <li><a href="#w_tb_0102">프랑스 샹파뉴</a></li>
+                  <li><a href="#w_tb_0103">프랑스 쥐라</a></li>
+                  <li><a href="#w_tb_0104">이탈리아 베네토</a></li>
+                  <li><a href="#w_tb_0105">스페인 바르셀로나</a></li>
+                </ul>
+                <ul class="tab_item_list">
+                  <li style="display:block">
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 부르고뉴 와인리스트 <span>France, Bourgogne</span>
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 부르고뉴 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>Class</th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Bailly Lapierre</td>
+                            <td>Cremant de Bourgogne</td>
+                            <td>NV</td>
+                            <td>France</td>
+                            <td>Bourgogne</td>
+                            <td>Regionale</td>
+                            <td>Pinot Noir</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 샹파뉴 와인리스트 <span>France, Champagne</span>
+                    </div>
+                    <div class="table_wrap scl_x" >
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 샹파뉴 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>Class</th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Laurent Perrier</td>
+                            <td>Champagne Brut</td>
+                            <td>NV</td>
+                            <td>France</td>
+                            <td></td>
+                            <td></td>
+                            <td>Blending</td>
+                          </tr>
+                          <tr>
+                            <td>A. R. Lenoble</td>
+                            <td>Intence Brut Mag 14</td>
+                            <td>NV</td>
+                            <td>France</td>
+                            <td>Champagne</td>
+                            <td></td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Diebolt Vallois</td>
+                            <td>Blanc de Blancs</td>
+                            <td>NV</td>
+                            <td>France</td>
+                            <td>Cote des Blancs</td>
+                            <td></td>
+                            <td>Blending</td>
+                          </tr>
+                          <tr>
+                            <td>Philipponnat</td>
+                            <td>Champagne Royal Reserve Brut</td>
+                            <td>NV</td>
+                            <td>France</td>
+                            <td>Mareuil-sur-Ay</td>
+                            <td></td>
+                            <td>Blending</td>
+                          </tr>
+                          <tr>
+                            <td>Baron de Rothschild</td>
+                            <td>Champagne Brut</td>
+                            <td>NV</td>
+                            <td>France</td>
+                            <td>Reims</td>
+                            <td></td>
+                            <td>Blending</td>
+                          </tr>
+                          <tr>
+                            <td>Bollinger</td>
+                            <td>Special Cuvee Brut</td>
+                            <td>NV</td>
+                            <td>France</td>
+                            <td>Champagne</td>
+                            <td></td>
+                            <td>Blending</td>
+                          </tr>
+                          <tr>
+                            <td>Billecart Salmon</td>
+                            <td>Cuvee Nicolas Francois Billecart</td>
+                            <td>2006</td>
+                            <td>France</td>
+                            <td>Champagne</td>
+                            <td></td>
+                            <td>Blending</td>
+                          </tr>
+                          <tr>
+                            <td>Bollinger</td>
+                            <td>Gran Anne 007 No time to die</td>
+                            <td>2011</td>
+                            <td>France</td>
+                            <td>Champagne</td>
+                            <td>Grand Cru</td>
+                            <td>Blending</td>
+                          </tr>
+                          <tr>
+                            <td>Salon</td>
+                            <td>Cuvee S</td>
+                            <td>2004</td>
+                            <td>France</td>
+                            <td>Mensil Sur Oger</td>
+                            <td></td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Salon</td>
+                            <td>Cuvee S</td>
+                            <td>2006</td>
+                            <td>France</td>
+                            <td>Mensil Sur Oger</td>
+                            <td></td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Salon</td>
+                            <td>Cuvee S</td>
+                            <td>2007</td>
+                            <td>France</td>
+                            <td>Mensil Sur Oger</td>
+                            <td></td>
+                            <td>Chardonnay</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 쥐라 와인리스트 <span>France, Jura</span>
+                    </div>
+                    <div class="table_wrap scl_x" >
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 쥐라 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>Class</th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Stephane Tissot</td>
+                            <td>Cremant du Jura Extra Brut Indigene</td>
+                            <td>NV</td>
+                            <td>France</td>
+                            <td>Jura</td>
+                            <td></td>
+                            <td>CH50,PN40,P,T</td>
+                          </tr>
+                          <tr>
+                            <td>Stephane Tissot</td>
+                            <td>Cremant du Jura Extra Brut BBF</td>
+                            <td>NV</td>
+                            <td>France</td>
+                            <td>Jura</td>
+                            <td></td>
+                            <td>CH 100%</td>
+                          </tr>
+                          <tr>
+                            <td>Philipe Bornard</td>
+                            <td>Tant mieux (Pet. Nat)</td>
+                            <td>NV</td>
+                            <td>France</td>
+                            <td>Vin de France</td>
+                            <td></td>
+                            <td>Poulssard</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_03.png" alt="">이탈리아 베네토 와인리스트 <span>Italy, Veneto</span>
+                    </div>
+                    <div class="table_wrap scl_x" >
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>이탈리아 베네토 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>Class</th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Ruggeri</td>
+                            <td>Giustino B Extra Dry Prosecco Superiore</td>
+                            <td>2016</td>
+                            <td>Italy</td>
+                            <td>Valdobbiadene</td>
+                            <td>DOCG</td>
+                            <td>Prosecco</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_02.png" alt="">스페인 바르셀로나 와인리스트 <span>Spain, Barcelona</span>
+                    </div>
+                    <div class="table_wrap scl_x" >
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>스페인 바르셀로나 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>Class</th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Gramona</td>
+                            <td>Cava Imperial</td>
+                            <td>NV</td>
+                            <td>Spain</td>
+                            <td>Barcelona</td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                </ul>
+              </div>
+              <!-- /스파클링 와인 리스트 -->
+              <!-- 화이트 와인 리스트 -->
+              <div class="tab_content ">
+                <ul class="depth2 col5">
+                  <li class="on"><a href="#w_tb_0101">프랑스 알자스</a></li>
+                  <li><a href="#w_tb_0102">프랑스 부르고뉴</a></li>
+                  <li><a href="#w_tb_0103">프랑스 루아르</a></li>
+                  <li><a href="#w_tb_0103">프랑스 론</a></li>
+                  <li><a href="#w_tb_0104">프랑스 기타</a></li>
+                  <li><a href="#w_tb_0105">이탈리아</a></li>
+                  <li><a href="#w_tb_0106">스페인</a></li>
+                  <li><a href="#w_tb_0107">오스트리아</a></li>
+                  <li><a href="#w_tb_0108">신대륙</a></li>
+                </ul>
+                <ul class="tab_item_list">
+                  <li style="display:block">
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 알자스 와인리스트 <span>France, Alsace</span>
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 알자스 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Albert Boxler</td>
+                            <td>Pinot Blanc</td>
+                            <td>2013</td>
+                            <td>France</td>
+                            <td>Alsace</td>
+                            <td>Pinot Blanc</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 부르고뉴 와인리스트 <span>France, Bourgogne</span>
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 부르고뉴 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Domaine de la Vougeraie</td>
+                            <td>Bourgogne Blanc Terre de Famille</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Bourgogne</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Sextant</td>
+                            <td>Bourgogne En Chapon</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Bourgogne</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Chateau de Pommard</td>
+                            <td>Bourgogne Chardonnay</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Coche-Dury</td>
+                            <td>Bourgogne Aligote</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Bourgogne</td>
+                            <td>Aligote</td>
+                          </tr>
+                          <tr>
+                            <td>Coche-Dury</td>
+                            <td>Bourgogne Chardonnay</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Bourgogne</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Goisot</td>
+                            <td>Saint Bris Exogyra Virgula</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Yonne</td>
+                            <td>Sauvignon Blanc</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Chateau de Pommard</td>
+                            <td>Ladoix 1er Cru Les Grechons</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Fontaine-Gagnard</td>
+                            <td>Chassagne-Montrachet 1er Cru La Boudriotte</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Fontaine-Gagnard</td>
+                            <td>Chassagne-Montrachet 1er Cru La Grande Montagne</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Fontaine-Gagnard</td>
+                            <td>Chassagne-Montrachet 1er Cru La Maltroie</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Fontaine-Gagnard</td>
+                            <td>Chassagne-Montrachet 1er Cru Morgeot</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Do. Latour-Giraud</td>
+                            <td>Puligny-Montrachet 1er Cru Champs Canet</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Bruno Colin</td>
+                            <td>Puligny Montrachet 1er Cru La Truffiere</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Lamy-Pillot</td>
+                            <td>Montrachet GC</td>
+                            <td>2014</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Benjamin Leroux</td>
+                            <td>Auxey Duresses</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Bruno Colin</td>
+                            <td>Bourgogne Saint Aubin 1er Cru Le Charmois</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Frantz Chagnoleau</td>
+                            <td>Pouilly-Fuisse Pastrol</td>
+                            <td>2019</td>
+                            <td>France</td>
+                            <td>Maconnaise</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Frantz Chagnoleau</td>
+                            <td>Saint-Veran La Roche</td>
+                            <td>2019</td>
+                            <td>France</td>
+                            <td>Maconnaise</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Frantz Chagnoleau</td>
+                            <td>Macon-Villages Clos St. Pacras</td>
+                            <td>2019</td>
+                            <td>France</td>
+                            <td>Maconnaise</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 루아르 와인리스트 <span>France, Loire</span>
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 루아르 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Gitton Pere &amp; Fils</td>
+                            <td>Sancerre Les Belles Dames (Silex/Flint)</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Sancerre</td>
+                            <td>Sauvignon Blanc</td>
+                          </tr>
+                          <tr>
+                            <td>Chateau Pierre Bise</td>
+                            <td>Savennieres Roche aux Moines</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Anjou</td>
+                            <td>Chenin Blanc</td>
+                          </tr>
+                          <tr>
+                            <td>La Ferme de la Sansonniere</td>
+                            <td>La Lune</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Anjou</td>
+                            <td>Chenin Blanc</td>
+                          </tr>
+                          <tr>
+                            <td>La Ferme de la Sansonniere</td>
+                            <td>La Lune</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Anjou</td>
+                            <td>Chenin Blanc</td>
+                          </tr>
+                          <tr>
+                            <td>Domaine du Collier</td>
+                            <td>Saumur Blanc</td>
+                            <td>2014</td>
+                            <td>France</td>
+                            <td>Samur</td>
+                            <td>Chenin Blanc</td>
+                          </tr>
+                          <tr>
+                            <td>Edmond Vatin</td>
+                            <td>Sancerre Clos la Neore</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Loire</td>
+                            <td>Sauvignon Blanc</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 론 와인리스트 <span>France, Rhone</span>
+                    </div>
+                    <div class="table_wrap scl_x" >
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 론 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Pierre Gonon</td>
+                            <td>St. Joseph Les Olivieres Blanc</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Northern Rhone</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Jean-Louis Chave</td>
+                            <td>Hermitage Blanc</td>
+                            <td>2012</td>
+                            <td>France</td>
+                            <td>N. Rhone</td>
+                            <td>Blending</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 기타 와인리스트 <span>France, Others</span>
+                    </div>
+                    <div class="table_wrap scl_x" >
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 기타 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Domaine des Ardoisieres</td>
+                            <td>IGP Vin des Allobroges Argile</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Savoie</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine des Ardoisieres</td>
+                            <td>IGP Vin des Allobroges Schiste</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Savoie</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_03.png" alt="">이탈리아 와인리스트 <span>Italy</span>
+                    </div>
+
+                    <div class="table_wrap scl_x" >
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>이탈리아 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Roagna</td>
+                            <td>Langhe Bianco Solea</td>
+                            <td>2016</td>
+                            <td>Italy</td>
+                            <td>Piemonte</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Roagna</td>
+                            <td>Langhe Bianco Montemarzino</td>
+                            <td>2016</td>
+                            <td>Italy</td>
+                            <td>Piemonte</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Capril</td>
+                            <td>Sant'Andantimo Bianco</td>
+                            <td>2016</td>
+                            <td>Italy</td>
+                            <td>Toscana</td>
+                            <td>Vermentino 100%</td>
+                          </tr>
+                          <tr>
+                            <td>Giuseppe Quintarelli</td>
+                            <td>Veneto Bianco "Bianco Secco"</td>
+                            <td>2013</td>
+                            <td>Italy</td>
+                            <td>Veneto</td>
+                            <td>Blending</td>
+                          </tr>
+                          <tr>
+                            <td>Damijan</td>
+                            <td>Venezia Giulia Malvasia</td>
+                            <td>2011</td>
+                            <td>Italy</td>
+                            <td>Friuli Venezia Giulia</td>
+                            <td>Malvasia Istriana 100%</td>
+                          </tr>
+                          <tr>
+                            <td>Damijan</td>
+                            <td>Venezia Giulia Kaplja Bianco</td>
+                            <td>2011</td>
+                            <td>Italy</td>
+                            <td>Friuli Venezia Giulia</td>
+                            <td>Chardonnay 40%, Friulano 30%, Malvasia Istriana 30%</td>
+                          </tr>
+                          <tr>
+                            <td>Damijan</td>
+                            <td>Venezia Giulia Nekaj</td>
+                            <td>2012</td>
+                            <td>Italy</td>
+                            <td>Friuli Venezia Giulia</td>
+                            <td>Friulano 100%</td>
+                          </tr>
+                          <tr>
+                            <td>Damijan</td>
+                            <td>Venezia Giulia Pinot Grigio</td>
+                            <td>NV</td>
+                            <td>Italy</td>
+                            <td>Friuli Venezia Giulia</td>
+                            <td>Pinot Grigio 100%</td>
+                          </tr>
+                          <tr>
+                            <td>Josco Gravner</td>
+                            <td>Ribolla Gialla Anfora</td>
+                            <td>2009</td>
+                            <td>Italy</td>
+                            <td>Friuli Venezia Giulia</td>
+                            <td>Ribolla Gialla 100%</td>
+                          </tr>
+                          <tr>
+                            <td>Josco Gravner</td>
+                            <td>Breg Bianco Anfora</td>
+                            <td>2006</td>
+                            <td>Italy</td>
+                            <td>Friuli Venezia Giulia</td>
+                            <td>SB 45%, PG 30%, CH 15%, Riesling Italico 10%</td>
+                          </tr>
+                          <tr>
+                            <td>Villa Bucci</td>
+                            <td>Castelli di Jesi Verdicchio Riserva</td>
+                            <td>2015</td>
+                            <td>Italy</td>
+                            <td>Marche</td>
+                            <td>Verdicchio</td>
+                          </tr>
+                          <tr>
+                            <td>Tenutte Dettori</td>
+                            <td>Dettori Bianco</td>
+                            <td>2017</td>
+                            <td>Italy</td>
+                            <td>Sardegna</td>
+                            <td>Vermentino</td>
+                          </tr>
+                          <tr>
+                            <td>Emidio Pepe</td>
+                            <td>Trebiano d'Abruzzo</td>
+                            <td>2013</td>
+                            <td>Italy</td>
+                            <td>Abruzzo</td>
+                            <td>Trebiano</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_02.png" alt="">스페인 와인리스트 <span>Spain, Barcelona</span>
+                    </div>
+
+                    <div class="table_wrap scl_x" >
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>스페인 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Vina Tondonia</td>
+                            <td>Blanco Reserva</td>
+                            <td>2005</td>
+                            <td>Spain</td>
+                            <td>Rioja</td>
+                            <td>Viura85,Malvasia15</td>
+                          </tr>
+                          <tr>
+                            <td>Vina Tondonia</td>
+                            <td>Blanco Reserva</td>
+                            <td>1993</td>
+                            <td>Spain</td>
+                            <td>Rioja</td>
+                            <td>Viura85,Malvasia15</td>
+                          </tr>
+                          <tr>
+                            <td>Lopez de Heredia</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_austria.png" alt="">오스트리아 와인리스트 <span>Austria</span>
+                    </div>
+
+                    <div class="table_wrap scl_x" >
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>오스트리아 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Schloss Gobelsburg</td>
+                            <td>Gruner Veltriner Langelois</td>
+                            <td>2016</td>
+                            <td>Austria</td>
+                            <td>Kamptal</td>
+                            <td>Gruner Veltriner</td>
+                          </tr>
+                          <tr>
+                            <td>OTT</td>
+                            <td>Am Berg Gruner Veltliner Trocken</td>
+                            <td>2014</td>
+                            <td>Austria</td>
+                            <td></td>
+                            <td>Gruner V.</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_05.png" alt="">신대륙 와인리스트 <span>신대륙</span>
+                    </div>
+
+                    <div class="table_wrap scl_x" >
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>신대륙 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>품종 <span>(Capage)</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Flaneur</td>
+                            <td>Willamatte Valley Chardonnay</td>
+                            <td>2018</td>
+                            <td>USA</td>
+                            <td>Oregon</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Flaneur</td>
+                            <td>La Belle Promenade Chardonnay</td>
+                            <td>2017</td>
+                            <td>USA</td>
+                            <td>Oregon</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Leeuwin Estate</td>
+                            <td>Chardonnay Prelude Vinyards</td>
+                            <td>2018</td>
+                            <td>Australia</td>
+                            <td>Margaret river</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Leeuwin Estate</td>
+                            <td>Chardonnay Art Series</td>
+                            <td>2016</td>
+                            <td>Australia</td>
+                            <td>Margaret river</td>
+                            <td>Chardonnay</td>
+                          </tr>
+                          <tr>
+                            <td>Kimcrawford</td>
+                            <td>Marlborough Sauvignon Blanc</td>
+                            <td>2018</td>
+                            <td>NewZealand</td>
+                            <td>Martinborough</td>
+                            <td>Sauvignon Blanc</td>
+                          </tr>
+                          <tr>
+                            <td>Badenhorst Family</td>
+                            <td>Secateurs Chenin Blanc</td>
+                            <td>2013</td>
+                            <td>S.Africa</td>
+                            <td></td>
+                            <td>Chenin Blanc</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                </ul>
+              </div>
+              <!-- /화이트 와인 리스트 -->
+              <!-- 레드 와인 리스트 -->
+              <div class="tab_content ">
+                <ul class="depth2 col5">
+                  <li class="on"><a href="#w_tb_0101">프랑스 부르고뉴</a></li>
+                  <li><a href="#w_tb_0102">프랑스 보르도</a></li>
+                  <li><a href="#w_tb_0103">프랑스 론</a></li>
+                  <li><a href="#w_tb_0104">프랑스 기타</a></li>
+                  <li><a href="#w_tb_0105">이탈리아 피에몬테</a></li>
+                  <li><a href="#w_tb_0106">이탈리아 토스카나</a></li>
+                  <li><a href="#w_tb_0107">이탈리아 기타</a></li>
+                  <li><a href="#w_tb_0108">스페인</a></li>
+                  <li><a href="#w_tb_0109">독일</a></li>
+                  <li><a href="#w_tb_0110">신대륙</a></li>
+                </ul>
+                <ul class="tab_item_list">
+                  <li style="display:block">
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 부르고뉴 와인리스트 <span>France, Bourgogne</span>
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 부르고뉴 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 (Winery)</th>
+                            <th>와인 (Wine)</th>
+                            <th>빈티지 (Vintage)</th>
+                            <th>제조국 (Nation)</th>
+                            <th>지역 (Region)</th>
+                            <th>품종 (Capage)</th>
+                            <th>Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Hudelot-Baillet</td>
+                            <td>Bourgogne Hautes-Cotes de Nuits</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Bourgogne</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine Michel Gros</td>
+                            <td>Bourgogne Hautes C&ocirc;tes de Nuits</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Frederic Magnien</td>
+                            <td>Morey-St-Denis 1er Cru Clos Sorbe</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Clos des Lambrays</td>
+                            <td>Morey-St.-Denis</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Clos des Lambrays</td>
+                            <td>Clos des Lambrays GC</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Clos de Tart</td>
+                            <td>Clos de Tart Grand Cru Monopole</td>
+                            <td>2007</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td>bh92</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine Guillard</td>
+                            <td>Gevery-Chambertin Aux Corvees</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine Guillard</td>
+                            <td>Gevery-Chambertin 1er Cru Aux Corveaux</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Geantet-Pansiot</td>
+                            <td>Gevery-Chambertin</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine Faiveley</td>
+                            <td>Gevery-Chambertin 1er Cru Clos de Issarts</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Perrot-Minot</td>
+                            <td>Chapelle-Chambertin</td>
+                            <td>2008</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Frederic Magnien</td>
+                            <td>Chambolle Musigny 1er Cru Les Charmes V.V</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td>bh89-92</td>
+                          </tr>
+                          <tr>
+                            <td>Geantet-Pansiot</td>
+                            <td>Chambolle-Musigny VV</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Geantet-Pansiot</td>
+                            <td>Chambolle-Musigny 1er Cru Les Baudes</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Geantet-Pansiot</td>
+                            <td>Chambolle-Musigny 1er Cru Feusselottes</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Drouhin-Laroze</td>
+                            <td>Bonnes Mares GC</td>
+                            <td>2008</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Gros Frere &amp; Soeur</td>
+                            <td>Clos Vougeot Musigni Grand Cru</td>
+                            <td>2013</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td>$157</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine Michel Gros</td>
+                            <td>Vosne Roman&eacute;e</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine Michel Gros</td>
+                            <td>Vosne Roman&eacute;e 1er Cru Aux Br&ucirc;l&eacute;es</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine Michel Gros</td>
+                            <td>Vosne Roman&eacute;e 1er Cru Monopole Clos Des R&eacute;as</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Gros Frere &amp; Soeu</td>
+                            <td>Richebourg Grand Cru</td>
+                            <td>2010</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td>rp93-95</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Robert Chevillon</td>
+                            <td>Nuits Saint Georges 1er Cru Les Bousselots</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td>bh92</td>
+                          </tr>
+                          <tr>
+                            <td>Robert Chevillon</td>
+                            <td>Nuits Saint Georges 1er Cru Les Bousselots</td>
+                            <td>2004</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td>bh92</td>
+                          </tr>
+                          <tr>
+                            <td>Domaine de l'Arlot</td>
+                            <td>Nuits-St.-Georges 1er Cru Clos de l'Arlot</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Jean Grivot</td>
+                            <td>Nuits St. Geoges 1er Cru Roncieres</td>
+                            <td>2005</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td>bh91</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Comte Senard</td>
+                            <td>Aloxe Corton Rouge</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Comte Senard</td>
+                            <td>Aloxe Corton 1er Cru Les Valozieres</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Comte Senard</td>
+                            <td>Corton GC les Paulands</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Comte Senard</td>
+                            <td>Corton GC Clos de Meix Monopole</td>
+                            <td>2014</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine Faiveley</td>
+                            <td>Beaune 1er Cru Clos de L'Ecu</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Pinot Noir</td>
+                            <td>89</td>
+                          </tr>
+                          <tr>
+                            <td>Bourchard</td>
+                            <td>Beaune 1er Cru Greves Vigne de l'Enfant Jesus</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Chateau de Pommard</td>
+                            <td>Pommard Clos Marey-Monge Micault</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Chateau de Pommard</td>
+                            <td>Pommard Clos Marey-Monge 75 Rangs</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Chateau de Pommard</td>
+                            <td>Pommard Clos Marey-Monge Monopole</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Benjamin Leroux</td>
+                            <td>Volnay 1er Cru Clos de la Cave des Duc</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>Cote de Nuits</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Hospice de Beaune</td>
+                            <td>Auxey Duressess 1er Les Duressess Cuvee Boillot</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Cote de Beaune</td>
+                            <td>Pinot Noir</td>
+                            <td>89</td>
+                          </tr>
+                          <tr>
+                            <td>Coche-Dury</td>
+                            <td>Monthelie</td>
+                            <td>2018</td>
+                            <td>France</td>
+                            <td>Bourgogne</td>
+                            <td>Chardonnay</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine du Clos Salomon</td>
+                            <td>Givry 1er Cru Clos Salomon</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Cote Salonaise</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 보르도 와인리스트 <span>France, Loire</span>
+                    </div>
+
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 보르도 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 (Winery)</th>
+                            <th>와인 (Wine)</th>
+                            <th>빈티지 (Vintage)</th>
+                            <th>제조국 (Nation)</th>
+                            <th>지역 (Region)</th>
+                            <th>품종 (Capage)</th>
+                            <th>Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>L'Hetre</td>
+                            <td>Cotes de Bordeaux Castillon</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>St.-Emilion</td>
+                            <td>Merlot/CF</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Chateau Haut-Simard</td>
+                            <td>St.-Emilion Grand Cru</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>St.-Emilion</td>
+                            <td>Merlot/CF</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Chateau Saint Christophe</td>
+                            <td>St.-Emilion Grand Cru</td>
+                            <td>2017</td>
+                            <td>France</td>
+                            <td>St.-Emilion</td>
+                            <td>Merlot/CF</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Chateau Leoville Las Cases</td>
+                            <td></td>
+                            <td>2004</td>
+                            <td>France</td>
+                            <td>St.-Julien</td>
+                            <td>Blending</td>
+                            <td>rp93,ws95</td>
+                          </tr>
+                          <tr>
+                            <td>Chateau Ducru-Beaucaillou</td>
+                            <td></td>
+                            <td>2003</td>
+                            <td>France</td>
+                            <td>St.-Julien</td>
+                            <td>Blending</td>
+                            <td>rp95,ws97</td>
+                          </tr>
+                          <tr>
+                            <td>Chateau Montrose</td>
+                            <td></td>
+                            <td>2003</td>
+                            <td>France</td>
+                            <td>St.-Estephe</td>
+                            <td>Blending</td>
+                            <td>rp98,ws95</td>
+                          </tr>
+                          <tr>
+                            <td>Chateau Leoville Barton</td>
+                            <td></td>
+                            <td>2005</td>
+                            <td>France</td>
+                            <td>St.-Julien</td>
+                            <td>Blending</td>
+                            <td>rp95,ws96</td>
+                          </tr>
+                          <tr>
+                            <td>Chateau La Mission Haut-Brion</td>
+                            <td>2008</td>
+                            <td>France</td>
+                            <td>Pessac-Leognan</td>
+                            <td>Blending</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Chateau Haut-Brion</td>
+                            <td></td>
+                            <td>2004</td>
+                            <td>France</td>
+                            <td>Pessac-Leognan</td>
+                            <td>Blending</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Chateau Petit-Village</td>
+                            <td></td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Pomerol</td>
+                            <td>Blending</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 론 와인리스트 <span>France, Rhone</span>
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 론 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 (Winery)</th>
+                            <th>와인 (Wine)</th>
+                            <th>빈티지 (Vintage)</th>
+                            <th>제조국 (Nation)</th>
+                            <th>지역 (Region)</th>
+                            <th>품종 (Capage)</th>
+                            <th>Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Alain Graillot</td>
+                            <td>Croze-Hermitage</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Northern Rhone</td>
+                            <td>Syrah</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>J.L Chave Selection</td>
+                            <td>St. Joseph Offerus</td>
+                            <td>2011</td>
+                            <td>France</td>
+                            <td>Northern Rhone</td>
+                            <td>Syrah</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Pierre Gonon</td>
+                            <td>St.-Joseph</td>
+                            <td>2014</td>
+                            <td>France</td>
+                            <td>Northern Rhone</td>
+                            <td>Syrah</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Pierre Gonon</td>
+                            <td>St.-Joseph</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Northern Rhone</td>
+                            <td>Syrah</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Jamet</td>
+                            <td>Cote Rotie</td>
+                            <td>2011</td>
+                            <td>France</td>
+                            <td>Northern Rhone</td>
+                            <td>Syrah</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Mas de Libian</td>
+                            <td>Cotes du Rhone Bout d`Zin</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Southern Rhone</td>
+                            <td>Grenache 75%</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine Brusset</td>
+                            <td>Cairanne Cuvee Hommage a Andre Brusset</td>
+                            <td>2016</td>
+                            <td>France</td>
+                            <td>Southern Rhone</td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Clos des Brusquieres</td>
+                            <td>CDP</td>
+                            <td>2010</td>
+                            <td>France</td>
+                            <td>Southern Rhone</td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_01.png" alt="">프랑스 기타 와인리스트 <span>France, Others</span>
+                    </div>
+
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>프랑스 기타 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 (Winery)</th>
+                            <th>와인 (Wine)</th>
+                            <th>빈티지 (Vintage)</th>
+                            <th>제조국 (Nation)</th>
+                            <th>지역 (Region)</th>
+                            <th>품종 (Capage)</th>
+                            <th>Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Domaine du Collier</td>
+                            <td>Saumur Rouge</td>
+                            <td>2014</td>
+                            <td>France</td>
+                            <td>Samur</td>
+                            <td>Cabernet Franc</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Famille Jouffreau</td>
+                            <td>Cahors Close de Gamot</td>
+                            <td>2015</td>
+                            <td>France</td>
+                            <td>Cahors</td>
+                            <td>Malbec</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domaine Gauby</td>
+                            <td>Cotes du Roussillon Village Muntada</td>
+                            <td>2003</td>
+                            <td>France</td>
+                            <td>Roussillon</td>
+                            <td>Syrah</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_03.png" alt="">이탈리아 피에몬테 와인리스트 <span>Italy, Piemonte</span>
+                    </div>
+
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>이탈리아 피에몬테 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 (Winery)</th>
+                            <th>와인 (Wine)</th>
+                            <th>빈티지 (Vintage)</th>
+                            <th>제조국 (Nation)</th>
+                            <th>지역 (Region)</th>
+                            <th>품종 (Capage)</th>
+                            <th>Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Giovanni Rosso</td>
+                            <td>Langhe Nebbiolo</td>
+                            <td>2016</td>
+                            <td>Italy</td>
+                            <td>Piemonte</td>
+                            <td>Nebbiolo</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Domenico Clerico</td>
+                            <td>Barolo</td>
+                            <td>2014</td>
+                            <td>Italy</td>
+                            <td>Barolo</td>
+                            <td>Nebbiolo</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Damilano</td>
+                            <td>Barolo Cannubi</td>
+                            <td>2011</td>
+                            <td>Italy</td>
+                            <td>Barolo</td>
+                            <td>Nebbiolo</td>
+                            <td>we95 rp93 ws93 ct92</td>
+                          </tr>
+                          <tr>
+                            <td>Conterno-Fantino</td>
+                            <td>Barolo Sori Ginestra</td>
+                            <td>2014</td>
+                            <td>Italy</td>
+                            <td>Monforte d'Alba</td>
+                            <td>Nebbiolo</td>
+                            <td>rp94,ws94</td>
+                          </tr>
+                          <tr>
+                            <td>Mario Marengo</td>
+                            <td>Barolo</td>
+                            <td>2013</td>
+                            <td>Italy</td>
+                            <td>La Mora</td>
+                            <td>Nebbiolo</td>
+                            <td>rp96 js95 ws94</td>
+                          </tr>
+                          <tr>
+                            <td>Mario Marengo</td>
+                            <td>Barolo Brunate</td>
+                            <td>2013</td>
+                            <td>Italy</td>
+                            <td>La Mora</td>
+                            <td>Nebbiolo</td>
+                            <td>rp96 js95 ws94</td>
+                          </tr>
+                          <tr>
+                            <td>Roagna</td>
+                            <td>Barolo Pira VV</td>
+                            <td>2010</td>
+                            <td>Italy</td>
+                            <td>Castiglione Falletto</td>
+                            <td>Nebbiolo</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Damilano</td>
+                            <td>Cannubi Riserva 1752</td>
+                            <td>2009</td>
+                            <td>Italy</td>
+                            <td>Barolo</td>
+                            <td>Nebbiolo</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Giacomo Marengo</td>
+                            <td>Armire</td>
+                            <td>2004</td>
+                            <td>Italy</td>
+                            <td>La Mora</td>
+                            <td>Nebbiolo</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Icardi</td>
+                            <td>Barbaresco Montubert</td>
+                            <td>2015</td>
+                            <td>Italy</td>
+                            <td>Neive</td>
+                            <td>Nebbiolo</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Sottimano</td>
+                            <td>Barbaresco Cotta</td>
+                            <td>2016</td>
+                            <td>Italy</td>
+                            <td>Neive</td>
+                            <td>Nebbiolo</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_03.png" alt="">이탈리아 토스카나 와인리스트 <span>Italy, Toscana</span>
+                    </div>
+
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>이탈리아 토스카나 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 (Winery)</th>
+                            <th>와인 (Wine)</th>
+                            <th>빈티지 (Vintage)</th>
+                            <th>제조국 (Nation)</th>
+                            <th>지역 (Region)</th>
+                            <th>품종 (Capage)</th>
+                            <th>Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Jacopo Biondi Santi</td>
+                            <td>Sassoalloro</td>
+                            <td>2015</td>
+                            <td>Italy</td>
+                            <td>Maremma</td>
+                            <td>Sangiovese</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Tenuta dell'Ornellaia</td>
+                            <td>Ornellaia</td>
+                            <td>2012</td>
+                            <td>Italy</td>
+                            <td>Bolgheri</td>
+                            <td>C/S blendiing</td>
+                            <td>ws93</td>
+                          </tr>
+                          <tr>
+                            <td>Tenuta San Guido</td>
+                            <td>Sassicaia</td>
+                            <td>2014</td>
+                            <td>Italy</td>
+                            <td>Bolgheri</td>
+                            <td>C/S blendiing</td>
+                            <td>we95</td>
+                          </tr>
+                          <tr>
+                            <td>Le Potazzine</td>
+                            <td>BDM</td>
+                            <td>2014</td>
+                            <td>Italy</td>
+                            <td>Montalcino</td>
+                            <td>Sangiovese</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Caprili</td>
+                            <td>BDM Riserva adAlberto</td>
+                            <td>2012</td>
+                            <td>Italy</td>
+                            <td>Montalcino</td>
+                            <td>Sangiovese</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Valdicava</td>
+                            <td>BDM</td>
+                            <td>2012</td>
+                            <td>Italy</td>
+                            <td>Montalcino</td>
+                            <td>Sangiovese</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Valdicava</td>
+                            <td>BDM Riserva Madonna del Piano</td>
+                            <td>2012</td>
+                            <td>Italy</td>
+                            <td>Montalcino</td>
+                            <td>Sangiovese</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Poliziano</td>
+                            <td>Vino Nobile di Montepulciano</td>
+                            <td>2015</td>
+                            <td>Italy</td>
+                            <td>Montepulciano</td>
+                            <td>Sangiovese 85% Colorino, Canaiolo e Merlot 15%</td>
+                            <td>rp91,ws92</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_03.png" alt="">이탈리아 기타 와인리스트 <span>Italy, Others</span>
+                    </div>
+
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>이탈리아 기타 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 (Winery)</th>
+                            <th>와인 (Wine)</th>
+                            <th>빈티지 (Vintage)</th>
+                            <th>제조국 (Nation)</th>
+                            <th>지역 (Region)</th>
+                            <th>품종 (Capage)</th>
+                            <th>Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Dal Forno Romano</td>
+                            <td>Valpolicella Superiore</td>
+                            <td>2013</td>
+                            <td>Italy</td>
+                            <td>Veneto</td>
+                            <td>* Blending</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Giuseppe Quintarelli</td>
+                            <td>Amarone della Valpolicella Classico</td>
+                            <td>2004</td>
+                            <td>Italy</td>
+                            <td>Veneto</td>
+                            <td>* Blending</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Gisueppe Quintarelli</td>
+                            <td>Alzero</td>
+                            <td>2006</td>
+                            <td>Italy</td>
+                            <td>Veneto</td>
+                            <td>* Blending</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Giuseppe Quintarelli</td>
+                            <td>Valpolicella Classico Superiore</td>
+                            <td>2007</td>
+                            <td>Italy</td>
+                            <td>Veneto</td>
+                            <td>* Blending</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Emidio Pepe</td>
+                            <td>Montepulciano d'Abruzzo</td>
+                            <td>2010</td>
+                            <td>Italy</td>
+                            <td>Abruzzo</td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Tenuta delle Terre Nere</td>
+                            <td>Etna Rosso</td>
+                            <td>2018</td>
+                            <td>Italy</td>
+                            <td>Sicilia</td>
+                            <td>네렐로 마스깔레제, 네렐로 까푸쵸</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_02.png" alt="">스페인 와인리스트 <span>Spain</span>
+                    </div>
+
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>스페인 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 (Winery)</th>
+                            <th>와인 (Wine)</th>
+                            <th>빈티지 (Vintage)</th>
+                            <th>제조국 (Nation)</th>
+                            <th>지역 (Region)</th>
+                            <th>품종 (Capage)</th>
+                            <th>Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Rioja Alta</td>
+                            <td>Vina Ardanza Reserva</td>
+                            <td>2012</td>
+                            <td>Spain</td>
+                            <td>Rioja</td>
+                            <td>Temprano</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Rioja Alta</td>
+                            <td>Grand Reserva 904(가족이 모두 모인 해 기념)</td>
+                            <td>2011</td>
+                            <td>Spain</td>
+                            <td>Rioja</td>
+                            <td>Temprano</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Vina Cubillo</td>
+                            <td>Tinto Crianza</td>
+                            <td>2009</td>
+                            <td>Spain</td>
+                            <td>Rioja</td>
+                            <td>Temprano</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Vina Bosconia</td>
+                            <td>Tinto Reserva</td>
+                            <td>2006</td>
+                            <td>Spain</td>
+                            <td>Rioja</td>
+                            <td>Temprano</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Vina Tondonia</td>
+                            <td>Tinto Reserva</td>
+                            <td>2005</td>
+                            <td>Spain</td>
+                            <td>Rioja</td>
+                            <td>Temprano</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Vina Tondonia</td>
+                            <td>Tinto Gran Reserva</td>
+                            <td>1991</td>
+                            <td>Spain</td>
+                            <td>Rioja</td>
+                            <td>Temprano</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Dominio del Aguila</td>
+                            <td>Ribera del Duoero Reserva</td>
+                            <td>2016</td>
+                            <td>Spain</td>
+                            <td>Ribera del Duoro</td>
+                            <td>Temprano</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Torres</td>
+                            <td>Mas La Plana</td>
+                            <td>2015</td>
+                            <td>Spain</td>
+                            <td>Penedes</td>
+                            <td>C.Sauvignon</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Vega Sicilia</td>
+                            <td>Ribera del Duero Valbuena No.5</td>
+                            <td>2014</td>
+                            <td>Spain</td>
+                            <td>Ribera del Duero</td>
+                            <td>Temprano</td>
+                            <td>rp96 ta96 vivino4.6</td>
+                          </tr>
+                          <tr>
+                            <td>Pingus</td>
+                            <td>Flor de Pingus</td>
+                            <td>2014</td>
+                            <td>Spain</td>
+                            <td>Ribera del Duero</td>
+                            <td>Temprano</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_04.png" alt="">독일 와인리스트 <span>Germany</span>
+                    </div>
+
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>독일 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 (Winery)</th>
+                            <th>와인 (Wine)</th>
+                            <th>빈티지 (Vintage)</th>
+                            <th>제조국 (Nation)</th>
+                            <th>지역 (Region)</th>
+                            <th>품종 (Capage)</th>
+                            <th>Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Bernhard Huber</td>
+                            <td>Schlossberg Spaetburgunder GG</td>
+                            <td>2013</td>
+                            <td>Germany</td>
+                            <td>Baden</td>
+                            <td>Spaetburgunder</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_05.png" alt="">신대륙 와인리스트 <!-- <span>신대륙</span> -->
+                    </div>
+
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>신대륙 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 (Winery)</th>
+                            <th>와인 (Wine)</th>
+                            <th>빈티지 (Vintage)</th>
+                            <th>제조국 (Nation)</th>
+                            <th>지역 (Region)</th>
+                            <th>품종 (Capage)</th>
+                            <th>Score</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Flaneur</td>
+                            <td>Willamatte Valley Pinot Noir</td>
+                            <td>2017</td>
+                            <td>USA</td>
+                            <td>Oregon</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Flaneur</td>
+                            <td>La Belle Promenade Pinot Noir</td>
+                            <td>2017</td>
+                            <td>USA</td>
+                            <td>Oregon</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Heitz Cellar</td>
+                            <td>Napa CS</td>
+                            <td>2014</td>
+                            <td>USA</td>
+                            <td>Napa</td>
+                            <td>C/S</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Valli Vineyards</td>
+                            <td>Valli Vineyards Gibbston Vineyards</td>
+                            <td>2007</td>
+                            <td>NewZealand</td>
+                            <td>Central Otago</td>
+                            <td>Pinot Noir</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Perez Cruz</td>
+                            <td>C/S Reserva</td>
+                            <td>2016</td>
+                            <td>Chile</td>
+                            <td>Maipo</td>
+                            <td>CS</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Perez Cruz</td>
+                            <td>Liguai</td>
+                            <td>2014</td>
+                            <td>Chile</td>
+                            <td>Maipo</td>
+                            <td>Syrah,C/S,CR</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Cono Sur</td>
+                            <td>Ocio</td>
+                            <td>2015</td>
+                            <td>Chile</td>
+                            <td>Aconcagua</td>
+                            <td>Syrah,C/S,CR</td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Montes Alpha</td>
+                            <td>M</td>
+                            <td>2017</td>
+                            <td>Chile</td>
+                            <td>Colchagua</td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>											
+                  </li>
+                </ul>
+              </div>
+              <!-- /레드 와인 리스트 -->
+              <!-- 디저트 와인 리스트 -->
+              <div class="tab_content">
+                <ul class="depth2 col5">
+                  <li class="on"><a href="#w_tb_0101">독일</a></li>
+                </ul>
+                <ul class="tab_item_list">
+                  <li style="display:block">
+                    <div class="ta_tit">
+                      <img src="images/bul_nation_04.png" alt="">독일 와인리스트 <span>Germany</span>
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>독일 와인리스트</caption>
+                        <thead>
+                          <tr>
+                            <th>와인 양조장 <span>(Winery)</span></th>
+                            <th>와인  <span>(Wine)</span></th>
+                            <th>빈티지 <span>(Vintage)</span></th>
+                            <th>제조국 <span>(Nation)</span></th>
+                            <th>지역 <span>(Region)</span></th>
+                            <th>Class</th>
+                            <th>품종 <span>(Capage)</span></th>
+                            <th>Volume</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Karl Erbes</td>
+                            <td>Urziger Wurzgarten Auselese</td>
+                            <td>1997</td>
+                            <td>Germany</td>
+                            <td>Mozel</td>
+                            <td></td>
+                            <td>Riesling</td>
+                            <td>750ml</td>
+                          </tr>
+                          <tr>
+                            <td>Willi Schaefer</td>
+                            <td>Graacher Riesling Trocken</td>
+                            <td>2014</td>
+                            <td>Germany</td>
+                            <td>Mozel</td>
+                            <td></td>
+                            <td>Riesling</td>
+                            <td>750ml</td>
+                          </tr>
+                          <tr>
+                            <td>Carl Loewen</td>
+                            <td>Maximin Herrenberg Riesling Trocken 1896</td>
+                            <td>2017</td>
+                            <td>Germany</td>
+                            <td>Mosel</td>
+                            <td></td>
+                            <td>Riesling</td>
+                            <td>750ml</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                </ul>
+              </div>
+              <!-- /디저트 와인 리스트 -->
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>	
+      <div class="page_bottom"></div>
+    </section>
+    <section class="page page4 food" id="page5">
+      <div class="page_top"></div>
+      <div class="page4_wrapped">
+        <h4>식사 메뉴</h4>
+        <!-- Swiper -->
+        <div class="swiper-container gallery-top swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+          <ul class="swiper-wrapper" id="swiper-wrapper-ef10764e9caeeee4b">
+            <li class="swiper-slide swiper-slide-active">
+              <a href=""><img src="images/food_01.png" alt="menu1"></a>
+              <div class="page5_li_box">
+                <h4>안심 스테이크</h4>
+                <h5>55,000원</h5>
+                <p>소금, 후추, 허브, 올리브유로 밑간을 한 한우 암소 안심 1+ 등급</p>
+              </div>
+            </li>
+            <li class="swiper-slide swiper-slide-next">
+              <a href=""><img src="images/food_02.png" alt="menu2"></a>
+                <div class="page5_li_box">
+                  <h4>채끝 스테이크</h4>
+                  <h5>47,000원</h5>
+                  <p>소금, 후추, 허브, 올리브유로 밑간을 한 한우 암소 안심 1+ 등급</p>
+                </div>
+            </li>
+            <li class="swiper-slide">
+              <a href=""><img src="images/food_03.png" alt="menu3"></a>
+              <div class="page5_li_box">
+                <h4>챱 스테이크</h4>
+                <h5>45,000원</h5>
+                <p>한우 암소 1+ 채끝 등심을 소금,후추,올리브유로 밑간을 하여 야채와 함께 볶아 만듦.</p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <a href=""><img src="images/food_04.png" alt="menu4"></a>
+              <div class="page5_li_box">
+                <h4>봉골레 파스타</h4>
+                <h5>17,000원</h5>
+                <p>싱싱한 조개와 링귀니면..<br>엑스트라 버진 올리브유</p>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <a href=""><img src="images/food_05.png" alt="menu5"></a>
+              <div class="page5_li_box">
+                <h4>연어 샐러드</h4>
+                <h5>13,000원</h5>
+                <p>신선한 연어에 10년 숙성 발사믹 식초와 엑스트라 버진 올리브유로 만듦.</p>
+              </div>
+            </li>
+          </ul>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        <div class="swiper-container gallery-thumbs swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events swiper-container-free-mode swiper-container-thumbs">
+          <ul class="swiper-wrapper" id="swiper-wrapper-44e220a663dc9e67">
+            <li class="swiper-slide swiper-slide-thumb-active swiper-slide-visible swiper-slide-active">
+              <a href=""><img src="images/food_01.png" alt="menu1"></a>
+              <div class="page5_li_box">
+                <h4>안심 스테이크</h4>
+                <h5>55,000원</h5>
+                <p>소금,후추,허브,올리브유로 밑간을 한 한우 암소 안심 1+ 등급</p>
+              </div>
+            </li>
+            <li class="swiper-slide swiper-slide-visible swiper-slide-next">
+              <a href=""><img src="images/food_02.png" alt="menu2"></a>
+                <div class="page5_li_box">
+                  <h4>채끝 스테이크</h4>
+                  <h5>47,000원</h5>
+                  <p>소금,후추, 허브, 올리브유로 밑간을 한  한우 암소  안심 1+ 등급</p>
+                </div>
+            </li>
+            <li class="swiper-slide swiper-slide-visible">
+              <a href=""><img src="images/food_03.png" alt="menu3"></a>
+              <div class="page5_li_box">
+                <h4>챱 스테이크</h4>
+                <h5>45,000원</h5>
+                <p>한우 암소 1+ 채끝 등심을 소금, 후추, 올리브유로 밑간을 하여 야채와 함께 볶아 만듬.</p>
+              </div>
+            </li>
+            <li class="swiper-slide swiper-slide-visible">
+              <a href=""><img src="images/food_04.png" alt="menu4"></a>
+              <div class="page5_li_box">
+                <h4>봉골레 파스타</h4>
+                <h5>17,000원</h5>
+                <p>싱싱한 조개와 링귀니면..<br>엑스트라 버진 올리브유</p>
+              </div>
+            </li>
+            <li class="swiper-slide swiper-slide-visible">
+              <a href=""><img src="images/food_05.png" alt="menu5"></a>
+              <div class="page5_li_box">
+                <h4>연어 샐러드</h4>
+                <h5>13,000원</h5>
+                <p>신선한 연어에 10년 숙성 발사믹 식초와 엑스트라 버진 올리브유로 만듬.</p>
+              </div>
+            </li>
+          </ul>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        <!-- Arrows and Pagination -->
+        <div class="swiper-btns">
+          <!-- Add Arrows -->
+          <div class="swiper-button-next swiper-button-black" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-ef10764e9caeeee4b" aria-disabled="false"></div>
+          <div class="swiper-button-prev swiper-button-black swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-ef10764e9caeeee4b" aria-disabled="true"></div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="page_bottom"></div>
+    </section>
+    <div><img src="images/page2_guide_b_b.png" alt="" style="width: 100%; display: block;"></div>
+    <!-- page5 -->
+    <section class="page culture" id="page6">
+      <div class="page_top"></div>
+      <div class="page_container">
+        <div class="page4_wrap" id="all">
+          <h4>우듬지 문화행사</h4>
+          <div class="page4_layout_box">
+            <div class="culture_txt">
+              <h5>문화행사</h5>
+              <p>
+                우듬지는 와인을 단순한 '알코올'로만 보지는 않습니다. 사회 전반의 문화적 콘텐츠 중 하나로 보고 있으며, 따라서 와인을 깊이 있게 즐기기 위해선 문화적 소양을 키우고 다양한 문화적 코드와 함께 해야한다고 생각하고 있습니다. 이를 위해 분기에 한 번 정도 각 분야의 전문가들을 모시고, 문화 행사를 겸한 와인 앤 다인 행사를 개최하고 있습니다. 우듬지 문화 행사는 모든 분들께 오픈되어 있습니다. 문화행사에 참여하고 싶으신 분들은 아래 연락처로 연락 주시기 바랍니다.
+              </p>
+              <a class="tel" href="tel:010-9469-3354"><img src="images/phone_icon.png" alt=""> 010-9469-3354</a>
+            </div>
+            <!-- card slide -->
+            <div class="carousel">
+              <button class="carousel-button carousel-btn-left is-last"><span></span></button>
+              <div class="carousel-track-container">
+                <ul class="carousel-track">
+                  <li class="carousel-slide current-slide">
+                    <div class="page4_con_outer_wrap"> 
+                      <div class="page4_con_txt_next">
+                        <strong class="page4_next_time">(코로나 사정으로 무기연기)</strong>
+                        <ul class="page4_next_wrap">
+                        <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span>18:00</span></li>
+                        <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>우듬지</span></li>
+                        <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010-9469-3354</span></li>
+                        </ul>
+                        <!-- <hr style="border-style: dashed; border-color:#ccc;">
+                        <strong class="etc_txt">기타사항</strong> -->
+                        <a class="arr">back</a>
+                      </div>
+                      <div class="culture_thumb">
+                        <img src="images/culture_img_8.jpg" alt="제8회문화강좌">
+                      </div>
+                      <div class="page4_con_txt">
+                        <h6>제 8회 도자강좌<br>"21세기 한국도자공예의 발자취"</h6>
+                        <p>
+                          - 노산도방 홍성일 작가 	
+                        </p>
+                        <span>(코로나 사정으로 무기연기)</span>
+                        <a class="arr">more</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="carousel-slide">
+                    <div class="page4_con_outer_wrap"> 
+                      <div class="page4_con_txt_next">
+                        <strong class="page4_next_time">2020-09-12 토요일</strong>
+                        <ul class="page4_next_wrap">
+                        <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span>18:00</span></li>
+                        <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>우듬지</span></li>
+                        <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010-9469-3354</span></li>
+                        </ul>
+                        <!-- <hr style="border-style: dashed; border-color:#ccc;">
+                        <strong class="etc_txt">기타사항</strong> -->
+                        <a class="arr">back</a>
+                      </div>
+                      <div class="culture_thumb">
+                        <img src="images/culture_img_7.jpg" alt="제7회문화강좌">
+                      </div>
+                      <div class="page4_con_txt">
+                        <h6>제 7회 음악강좌<br>"스페인 플라멩고"</h6>
+                        <p>
+                          - 제플린 회원님  	
+                        </p>
+                        <span>2020-09-12</span>
+                        <a class="arr">more</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="carousel-slide">
+                    <div class="page4_con_outer_wrap"> 
+                      <div class="page4_con_txt_next">
+                        <strong class="page4_next_time">2020-06-20 일요일</strong>
+                        <ul class="page4_next_wrap">
+                        <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span>18:00</span></li>
+                        <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>우듬지</span></li>
+                        <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010-9469-3354</span></li>
+                        </ul>
+                        <!-- <hr style="border-style: dashed; border-color:#ccc;">
+                        <strong class="etc_txt">기타사항</strong> -->
+                        <a class="arr">back</a>
+                      </div>
+                      <div class="culture_thumb">
+                        <img src="images/culture_img_6.jpg" alt="제6회문화강좌">
+                      </div>
+                      <div class="page4_con_txt">
+                        <h6>제 6회 와인강좌<br>"프랑스 론 밸리"</h6>
+                        <p>
+                          - 김만홍 소믈리에 및 와인 에듀케이터  	
+                        </p>
+                        <span>2020-06-20</span>
+                        <a class="arr">more</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="carousel-slide">
+                    <div class="page4_con_outer_wrap"> 
+                      <div class="page4_con_txt_next">
+                        <strong class="page4_next_time">2020-03-14 일요일</strong>
+                        <ul class="page4_next_wrap">
+                        <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span>18:00</span></li>
+                        <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>우듬지</span></li>
+                        <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010-9469-3354</span></li>
+                        </ul>
+                        <!-- <hr style="border-style: dashed; border-color:#ccc;">
+                        <strong class="etc_txt">기타사항</strong> -->
+                        <a class="arr">back</a>
+                      </div>
+                      <div class="culture_thumb">
+                        <img src="images/culture_img_5.jpg" alt="제5회문화강좌">
+                      </div>
+                      <div class="page4_con_txt">
+                        <h6>제 5회 건축강좌<br>"북 콘서트 일본건축의 발견"</h6>
+                        <p>
+                          - 최우용 건축가 및 건축 평론가
+                        </p>
+                        <span>2020-03-14</span>
+                        <a class="arr">more</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="carousel-slide">
+                    <div class="page4_con_outer_wrap"> 
+                      <div class="page4_con_txt_next">
+                        <strong class="page4_next_time">2020-01-04 월요일</strong>
+                        <ul class="page4_next_wrap">
+                        <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span>18:00</span></li>
+                        <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>우듬지</span></li>
+                        <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010-9469-3354</span></li>
+                        </ul>
+                        <!-- <hr style="border-style: dashed; border-color:#ccc;">
+                        <strong class="etc_txt">기타사항</strong> -->
+                        <a class="arr">back</a>
+                      </div>
+                      <div class="culture_thumb">
+                        <img src="images/culture_img_4.jpg" alt="제4회문화강좌">
+                      </div>
+                      <div class="page4_con_txt">
+                        <h6>제 4회 음악강좌<br>"포르투괄 전통 음악 파두"</h6>
+                        <p>
+                          - 제플린 회원님
+                        </p>
+                        <span>2020-01-04</span>
+                        <a class="arr">more</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="carousel-slide">
+                    <div class="page4_con_outer_wrap"> 
+                      <div class="page4_con_txt_next">
+                        <strong class="page4_next_time">2019-10-26 토요일</strong>
+                        <ul class="page4_next_wrap">
+                        <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span>18:00</span></li>
+                        <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>우듬지</span></li>
+                        <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010-9469-3354</span></li>
+                        </ul>
+                        <!-- <hr style="border-style: dashed; border-color:#ccc;">
+                        <strong class="etc_txt">기타사항</strong> -->
+                        <a class="arr">back</a>
+                      </div>
+                      <div class="culture_thumb">
+                        <img src="images/culture_img_3.jpg" alt="제3회문화강좌">
+                      </div>
+                      <div class="page4_con_txt">
+                        <h6>제 3회 미술강좌<br>"민중미술"</h6>
+                        <p>
+                          - 중앙대 서양미술학과 이종구 교수님
+                        </p>
+                        <span>2019-10-26</span>
+                        <a class="arr">more</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="carousel-slide">
+                    <div class="page4_con_outer_wrap"> 
+                      <div class="page4_con_txt_next">
+                        <strong class="page4_next_time">2019-05-31 금요일</strong>
+                        <ul class="page4_next_wrap">
+                        <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span>18:00</span></li>
+                        <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>우듬지</span></li>
+                        <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010-9469-3354</span></li>
+                        </ul>
+                        <!-- <hr style="border-style: dashed; border-color:#ccc;">
+                        <strong class="etc_txt">기타사항</strong> -->
+                        <a class="arr">back</a>
+                      </div>
+                      <div class="culture_thumb">
+                        <img src="images/culture_img_2.jpg" alt="제2회문화강좌">
+                      </div>
+                      <div class="page4_con_txt">
+                        <h6>제 2회 건축강좌<br>"채나눔건축"</h6>
+                        <p>
+                          - 이일훈 후리 건축 연구소 소장님
+                        </p>
+                        <span>2019-05-31</span>
+                        <a class="arr">more</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="carousel-slide">
+                    <div class="page4_con_outer_wrap"> 
+                      <div class="page4_con_txt_next">
+                        <strong class="page4_next_time">2019-05-09 목요일</strong>
+                        <ul class="page4_next_wrap">
+                        <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span>18:00</span></li>
+                        <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>우듬지</span></li>
+                        <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010-9469-3354</span></li>
+                        </ul>
+                        <!-- <hr style="border-style: dashed; border-color:#ccc;">
+                        <strong class="etc_txt">기타사항</strong> -->
+                        <a class="arr">back</a>
+                      </div>
+                      <div class="culture_thumb">
+                        <img src="images/culture_img_1.jpg" alt="제1회문화강좌">
+                      </div>
+                      <div class="page4_con_txt">
+                        <h6>제 1회 음악강좌<br>"라틴음악"</h6>
+                        <p>
+                          - 월드뮤직 저널리스트 김선호 선생님
+                        </p>
+                        <span>2019-05-09</span>
+                        <a class="arr">more</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <button class="carousel-button carousel-btn-right"><span></span></button>
+              <div class="carousel-nav">
+                <button class="carousel-indicator current-slide"></button>
+                <button class="carousel-indicator"></button>
+                <button class="carousel-indicator"></button>
+                <button class="carousel-indicator"></button>
+                <button class="carousel-indicator"></button>
+                <button class="carousel-indicator"></button>
+                <button class="carousel-indicator"></button>
+                <button class="carousel-indicator"></button>
+              </div>
+            </div>
+          <!-- //card slide -->
+          </div> 
+        </div>
+        <!--page_container-->
+        </div>
+        <div class="page_bottom"></div>
+    </section>
+    <!-- 갤러리 영역 -->
+    <section class="page page6 gallery" id="page7">
+      <div class="page_top"></div>
+      <div class="page_container">
+        <h4>갤러리</h4>
+          <!-- Grid Gallery -->
+          <div class="grid-gallery swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="masonry swiper-slide">
+                <a href="images/gal_img_1_960.jpg" class="swipebox">
+                  <img src="images/gal_img_1_960.jpg" alt="우듬지 갤러리 이미지1">
+                </a>
+                <a href="images/gal_img_2_960.jpg" class="swipebox">
+                  <img src="images/gal_img_2_960.jpg" alt="우듬지 갤러리 이미지2">
+                </a>
+                <a href="images/gal_img_3_960.jpg" class="swipebox">
+                  <img src="images/gal_img_3_960.jpg" alt="우듬지 갤러리 이미지3">
+                </a>
+                <a href="images/gal_img_4_960.jpg" class="swipebox">
+                  <img src="images/gal_img_4_960.jpg" alt="우듬지 갤러리 이미지4">
+                </a>
+                <a href="images/gal_img_5_960.jpg" class="swipebox">
+                  <img src="images/gal_img_5_960.jpg" alt="우듬지 갤러리 이미지5">
+                </a>
+                <a href="images/gal_img_6_960.jpg" class="swipebox">
+                  <img src="images/gal_img_6_960.jpg" alt="우듬지 갤러리 이미지6">
+                </a>
+                <a href="images/gal_img_7_960.jpg" class="swipebox">
+                  <img src="images/gal_img_7_960.jpg" alt="우듬지 갤러리 이미지7">
+                </a>
+                <a href="images/gal_img_8_960.jpg" class="swipebox">
+                  <img src="images/gal_img_8_960.jpg" alt="우듬지 갤러리 이미지8">
+                </a>
+              </li>
+              <li class="masonry swiper-slide">
+                <a href="images/gal_img_9_960.jpg" class="swipebox">
+                  <img src="images/gal_img_9_960.jpg" alt="우듬지 갤러리 이미지9">
+                </a>
+                <a href="images/gal_img_10_960.jpg" class="swipebox">
+                  <img src="images/gal_img_10_960.jpg" alt="우듬지 갤러리 이미지10">
+                </a>
+                <a href="images/gal_img_11_960.jpg" class="swipebox">
+                  <img src="images/gal_img_11_960.jpg" alt="우듬지 갤러리 이미지11">
+                </a>
+                <a href="images/gal_img_12_960.jpg" class="swipebox">
+                  <img src="images/gal_img_12_960.jpg" alt="우듬지 갤러리 이미지12">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next swiper-button-white" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+          <div class="swiper-button-prev swiper-button-white swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        <div class="page_bottom"></div>
+    </section>
+    <!-- 지도 영역 -->
+    <section class="page page7 jido" id="page8">
+      <div class="jido_contents">
+        <div class="page_container">
+          <h4>오시는 길</h4>
+          <div class="jido_con_wrap">
+            <p>전라남도 나주시 그린로 379<br>포레루체 오피스텔 208호<br>(지번)빛가람동 279-4</p>
+            <a class="tel" href="tel:010-9469-3354"><img src="images/phone_icon.png" alt=""> 010-9469-3354</a>
+            <ul>
+              <li>좌석버스 02</li>
+              <li>나주버스 1160, 999</li>
+              <li>700, 701, 999, 1160, 7001, 셔틀 2, 그린 1</li>
+            </ul>
+          </div>
+          <div class="insta">
+            <img src="images/u_footer_logo.png" alt="하단로고">
+            <div class="insta_wrap">
+              <button type="button" id="insta_btn" onclick="window.open('https://instagram.com/woodeumji19?igshid=k3m2tsne83sv');">
+                <span>INSTAGRAM 팔로우하러가기 &gt;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="jido_img">
+        <img src="images/jido_images_pad.jpg" alt="우듬지 위치" usemap="#location">
+        <map name="location">
+          <area shape="circle" coords="510,485,80" href="http://naver.me/51Y3uH09" target="_blank" alt="포레루체 오피스텔 2층 우듬지">
+        </map>
+        <span class="here"></span>
+        <a href="http://naver.me/51Y3uH09" target="_blank" class="here_link"></a>
+      </div>
+      <div class="jido_footer">
+        <span class="jido_txt">사업자등록번호 : 325-08-01205 COPYRIGHT ⓒ 우듬지 ALL RIGHT RESERVED</span>
+      </div>
+    </section>
+  </body>
+</html>
