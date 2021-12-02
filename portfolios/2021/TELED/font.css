@@ -1,0 +1,41 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'poppins';
+  src: url(font/Poppins-Light.woff) format('woff');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'poppins';
+  src: url(font/Poppins-Regular.woff) format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'poppins';
+  src: url(font/Poppins-Medium.woff) format('woff');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'poppins';
+  src: url(font/Poppins-Bold.woff) format('woff');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'notosansKR';
+  src: url(font/NotoSansKR-Light.woff) format('woff');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'notosansKR';
+  src: url(font/NotoSansKR-Regular.woff) format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'notosansKR';
+  src: url(font/NotoSansKR-Medium.woff) format('woff');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'notosansKR';
+  src: url(font/NotoSansKR-Bold.woff) format('woff');
+  font-weight: 700;
+}
