@@ -1,0 +1,198 @@
+@charset "utf-8";
+
+@media all and (max-width:1024px){
+	/* 테라비전- 폰트 설정 */
+	body {font-size:20px;}
+
+	/* 공통 */
+	.text {text-align: center; position: static; width: 100%; padding: 300px 0;}
+
+	/* 테라비전- intro */
+	.teravi_intro_wrap {height:1080px;}
+	.teravi_intro {height:1080px;}
+	.teravi_intro .illust {right: 70px; top: 85%; width: 450px;}
+	.teravi_intro .illust_2 {margin:0 0 0 -208px;}
+	.teravi_intro .illust_3 {margin:0 0 0 -1162px;}
+	.teravi_intro .title {top:257px; left:0; width:60%; margin:0 0 0 78px;}
+	.teravi_intro .title h1 img {width:468px; height:auto;}
+	.teravi_intro h2 {bottom:63px; right:0; left:0; margin:0 105px 0 0; text-align:right;}
+	.teravi_intro h2 img {width:92px;}
+	.teravi_intro p {width: 100%; font-size:1.75rem; letter-spacing:-1px; line-height:1.5;}
+
+	/* 테라비전- 01 ~ 06 공통 */
+	.teravi_page01, .teravi_page03, .teravi_page05 {flex-direction: column;}
+	.teravi_page02, .teravi_page04, .teravi_page06 {flex-direction: column-reverse;}
+	.text p {margin: 0 auto; font-size: 1.75rem;}
+
+	/* 테라비전- 01 */
+	.teravi_page01_wrap {margin:-119px 0 0 0;}
+	.teravi_page01 .div1 {position: relative; display: flex; justify-content: flex-start; align-items: center; width: 100%; height: auto; left: 90px;}
+	.teravi_page01 .div1 img {width: 400px; height: auto; top: 580px; left: -60px;}
+	.teravi_page01 .div2 {width: 100%;}
+	.teravi_page01 .div2 h3 {font-size:54px; line-height:66px;}
+	.teravi_page01 .div2 img {right:-50px; bottom:48px; width:480px; height:330px;}
+
+	/* 테라비전- 02 */
+	.teravi_page02_wrap {margin:-119px 0 0 0;}
+	.teravi_page02 .div1 {width:100%; left:0; margin:0;}
+	.teravi_page02 .div1 h3 {font-size:56px; line-height:66px;}
+	.teravi_page02 .div1 img {bottom:-9px; left:-40px; width:480px;}	
+	.teravi_page02 .div2 {width: 100%; height: auto; left: auto; top: 500px; margin: 0; right: 20px;}
+	.teravi_page02 .div2 img {top:90px; right:0; width:400px; height:auto;}
+	
+	/* 테라비전- 03 */
+	.teravi_page03_wrap {margin:-119px 0 0 0;}
+	.teravi_page03 .div1 {position: relative; display: flex; justify-content: flex-start; align-items: center; width: 100%; height: auto; left: 90px; top: 500px;}
+	.teravi_page03 .div1 img {width: 450px; height: auto; left: -60px;}
+	.teravi_page03 .div2 {width: 100%;}
+	.teravi_page03 .div2 h3 {font-size:54px; line-height:66px;}
+	.teravi_page03 .div2 img {right: -35px; bottom: 48px; width: 440px; height: 376px;}
+
+	/* 테라비전- 04 */
+	.teravi_page04_wrap {margin:-119px 0 0 0;}
+	.teravi_page04 .div1 {width:100%; left:0; margin:0;}
+	.teravi_page04 .div1 h3 {font-size:56px; line-height:66px;}
+	.teravi_page04 .div1 img {bottom: -35px; left: -40px; width: 450px; height: 376px;}
+	.teravi_page04 .div2 {width:100%; height: auto; left:0; top: 450px; margin:0;}
+	.teravi_page04 .div2 img {top:90px; right:20px; width:400px; height:450px;}
+	
+	/* 테라비전- 05 */
+	.teravi_page05_wrap {margin:-119px 0 0 0;}
+	.teravi_page05 .div1 {width: 100%; height: auto; left:0; top: 450px; margin:0;}
+	.teravi_page05 .div1 img {top:73px; left:10px; width:400px; height:508px;}
+	.teravi_page05 .div2 {width:100%; left:0; margin:0;}
+	.teravi_page05 .div2 h3 {font-size:54px; line-height:66px;}
+	.teravi_page05 .div2 img {right:-60px; bottom:20px; width:450px; height:376px;}
+	
+	/* 테라비전- 06 */
+	.teravi_page06_wrap {margin:-119px 0 0 0;}
+	.teravi_page06 .div1 {width:100%; left:0; margin:0;}
+	.teravi_page06 .div1 h3 {font-size:56px; line-height:66px; white-space:pre-line;}
+	.teravi_page06 .div1 img {bottom:-40px; left:0; width:400px; height:376px;}	
+	.teravi_page06 .div2 {width:100%; height: auto; left:0; top: 0; margin:0;}
+	.teravi_page06 .div2 img {top: 550px; right: 10px; width: 400px; height: 538px;}
+
+	/* 테라비전- outro */	
+	.teravi_outro .title {top:250px; left:0; width:670px; margin:0 0 0 85px;}
+	.teravi_outro .title h1 {width:650px;}
+	.teravi_outro .title h1 img {width:350px;}
+	.teravi_outro .title .outro-desc {font-size: 18px;}
+	.teravi_outro > p {top:596px; left:0; margin:0 0 0 87px;}
+	.teravi_outro .illust_3 {margin:0 0 0 -450px;}
+	
+	/* 맨위로 플로팅 버튼 */
+	.floatbtn_pagetop {display:inline-block; position:fixed; z-index:60; right:26px; bottom:48px; width:56px; height:56px; border-radius:29px; background:rgba(48,50,59,.6) url("../images/@responsive/arrow_pagetop.svg") no-repeat center; background-size:36px;}
+}
+
+
+@media all and (max-width:768px){
+	/* 테라비전- 01 */
+	.teravi_page01 .div2 img {bottom:55px;}
+
+	/* 테라비전- 02 */
+	.teravi_page02 .div1 img {bottom:-16px;}	
+	
+	/* 테라비전- 03 */
+	.teravi_page03 .div1 img {width: 400px;}
+	.teravi_page03 .div2 img {bottom:55px;}
+	
+	/* 테라비전- 06 */
+	.teravi_page06 .div2 img {top: 550px; right: 10px; width: 400px; height: 538px;}
+}
+
+
+@media all and (max-width:680px){
+	/* 테라비전- 폰트 설정 */
+	body {font-size:10px; letter-spacing:-1px;}
+
+	/* 테라비전- intro */
+	.teravi_intro_wrap {height:540px; margin:0;}
+	.teravi_intro {height:540px;}
+	.teravi_intro .illust {top: 115%; width: 200px; right: 30px;}
+	.teravi_intro .illust_2 {width:613px; height:200px; margin:0 0 0 -104px;}
+	.teravi_intro .illust_3 {width:631px; height:206px; margin:0 0 0 -581px;}
+	.teravi_intro .title {top:120px; width:236px; margin:0 0 0 37px;}
+	.teravi_intro .title h1 {margin-bottom: 15px;}
+	.teravi_intro .title h1:before {height: 2px; width: 20px;}
+	.teravi_intro .title h1 img {width:236px; margin-top: 17px;}
+	.teravi_intro h2 {bottom:32px; margin:0 43px 0 0;}
+	.teravi_intro h2 img {width:50px;}
+	.teravi_intro p {top:200px; font-size:11px; line-height:16px; letter-spacing:-0.3px;}
+
+	/* 테라비전- 01 ~ 06 공통 */
+	.text {padding: 150px 0;}
+	.text p {font-size: 1rem; line-height: 1.5;}
+
+	/* 테라비전- 01 */
+	.teravi_page01_wrap {height:529px; margin:-60px 0 0 0;}
+	.teravi_page01_wrap .bg_rectangle1, .teravi_page01_wrap .bg_rectangle2 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_page01 {height:529px;}
+	.teravi_page01 .div1 {height:auto; width: 100%; justify-content: flex-start; left: 25px;}
+	.teravi_page01 .div1 img {height: auto; width: 180px; left: -20px; top: 300px;}
+	.teravi_page01 .div2 {height:529px;}	
+	.teravi_page01 .div2 h3 {font-size:27px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page01 .div2 img {right: -35px; bottom: 18px; width: 250px; height: 188px;}
+
+	/* 테라비전- 02 */
+	.teravi_page02_wrap {height:520px; margin:-60px 0 0 0;}
+	.teravi_page02 {height:520px;}
+	.teravi_page02 .div1 {height:520px;}
+	.teravi_page02 .div1 h3 {font-size:28px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page02 .div1 img {bottom: 1px; left: -30px; width: 240px; height: 188px;}
+	.teravi_page02 .div2 {height:auto; right: 0; top: 110px;}
+	.teravi_page02 .div2 img {top: 160px; right: 5px; width: 180px; height: 269px;}
+	
+	/* 테라비전- 03 */
+	.teravi_page03_wrap {height:529px; margin:-60px 0 0 0;}
+	.teravi_page03_wrap .bg_rectangle1, .teravi_page03_wrap .bg_rectangle2 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_page03 {height:529px;}
+	.teravi_page03 .div1 {height:auto; top: 85px; left: 0;}
+	.teravi_page03 .div1 img {top: 235px; left: 5px; width: 180px; height: auto;}
+	.teravi_page03 .div2 {height:529px;}
+	.teravi_page03 .div2 h3 {font-size:27px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page03 .div2 img {right:-15px; bottom:19px; width:240px; height:188px;}
+
+	/* 테라비전- 04 */
+	.teravi_page04_wrap {height:520px; margin:-60px 0 0 0;}
+	.teravi_page04 {height:520px;}
+	.teravi_page04 .div1 {height:520px;}
+	.teravi_page04 .div1 h3 {font-size:28px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page04 .div1 img {bottom: 1px; left: -25px; width: 230px; height: 188px;}
+	.teravi_page04 .div2 {height:auto; top: 115px;}
+	.teravi_page04 .div2 img {top: 145px; right: 5px; width: auto; height: 240px;}
+	
+	/* 테라비전- 05 */
+	.teravi_page05_wrap {height:529px; margin:-60px 0 0 0;}
+	.teravi_page05_wrap .bg_rectangle1 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_page05_wrap .bg_rectangle2 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_page05 {height:529px;}
+	.teravi_page05 .div1 {height:auto; top: 100px;}
+	.teravi_page05 .div1 img {top: 165px; left: 5px; width: 180px; height: 254px;}
+	.teravi_page05 .div2 {height:529px;}
+	.teravi_page05 .div2 h3 {font-size:27px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page05 .div2 img {right: -35px; bottom: 18px; width: 250px; height: 188px;}
+	
+	/* 테라비전- 06 */
+	.teravi_page06_wrap {height:520px; margin:-60px 0 0 0;}
+	.teravi_page06 {height:520px;}
+	.teravi_page06 .div1 {height:520px;}
+	.teravi_page06 .div1 h3 {font-size:28px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page06 .div1 img {bottom: 9px; left: -30px; width: 230px; height: 188px;}
+	.teravi_page06 .div2 {height:auto; top: 110px;}
+	.teravi_page06 .div2 img {top: 175px; right: 5px; width: 200px; height: 269px;}
+
+	/* 테라비전- outro */
+	.teravi_outro_wrap {height:358px; margin:-68px 0 0 0;}
+	.teravi_outro_wrap .bg_rectangle1 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_outro_wrap .bg_rectangle2 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_outro {height:470px;}
+	.teravi_outro .title {top:120px; width:auto; margin:0 0 0 27px;}
+	.teravi_outro .title h1 {width:auto;}
+	.teravi_outro .title h1 img {width:180px; height:auto;}
+	.teravi_outro .title .outro-desc {font-size: 12px; margin-top: 20px; max-width: 90%;}
+	.teravi_outro > p {top:290px; margin:0 0 0 27px; font-size:10.5px;}
+	.teravi_outro .illust_3 {top:145px; width:722px; height:236px; margin:0 0 0 -180px;}
+
+	/* 맨위로 플로팅 버튼 */
+	.floatbtn_pagetop {right:13px; bottom:24px; width:48px; height:48px; border-radius:25px; background-size:30px;}
+}

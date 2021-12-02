@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+@media all and (max-width:680px){
+	/* 테라비전- 폰트 설정 */
+	body {font-size:10px; letter-spacing:-1px;}
+
+	/* 테라비전- intro */
+	.teravi_intro_wrap {height:540px; margin:0;}
+	.teravi_intro {height:540px;}
+	.teravi_intro .illust {top: 115%; width: 200px; right: 30px;}
+	.teravi_intro .illust_2 {width:613px; height:200px; margin:0 0 0 -104px;}
+	.teravi_intro .illust_3 {width:631px; height:206px; margin:0 0 0 -581px;}
+	.teravi_intro .title {top:120px; width:236px; margin:0 0 0 37px;}
+	.teravi_intro .title h1 {margin-bottom: 15px;}
+	.teravi_intro .title h1:before {height: 2px; width: 20px;}
+	.teravi_intro .title h1 img {width:236px; margin-top: 17px;}
+	.teravi_intro h2 {bottom:32px; margin:0 43px 0 0;}
+	.teravi_intro h2 img {width:50px;}
+	.teravi_intro p {top:200px; font-size:10.5px; line-height:16px; letter-spacing:-0.3px;}
+
+	/* 테라비전- 01 ~ 06 공통 */
+	.teravi_page01, .teravi_page03, .teravi_page05 {flex-direction: column;}
+	.teravi_page02, .teravi_page04, .teravi_page06 {flex-direction: column-reverse;}
+	.text {position: absolute; left: 0; width: 70%; max-width: 80%;}
+
+	/* 테라비전- 01 */
+	.teravi_page01_wrap {height:529px; margin:-60px 0 0 0;}
+	.teravi_page01_wrap .bg_rectangle1, .teravi_page01_wrap .bg_rectangle2 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_page01 {height:529px; flex-direction: column;}
+	.teravi_page01 .div1 {height:529px; width: 100%; justify-content: flex-start; left: 25px;}
+	.teravi_page01 .div1 img {height: auto; width: 210px; left: 0; top: 105px;}
+	.teravi_page01 .div2 {height:529px; position: static;}	
+	.teravi_page01 .div2 .text {top: 100px; width: 100%; text-align: left; left: 30px;}
+	.teravi_page01 .div2 h3 {font-size:27px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page01 .div2 p {line-height:15px; letter-spacing:-0.5px;}
+	.teravi_page01 .div2 img {right:-15px; bottom:18px; width:278px; height:188px;}
+
+	/* 테라비전- 02 */
+	.teravi_page02_wrap {height:520px; margin:-60px 0 0 0;}
+	.teravi_page02 {height:520px;}
+	.teravi_page02 .div1 {height:520px;}
+	.teravi_page02 .div1 .text {top: 50px; left: auto; text-align: right; right: 30px;}
+	.teravi_page02 .div1 h3 {font-size:28px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page02 .div1 p {font-size:11px; line-height:16px; letter-spacing:-0.5px;}
+	.teravi_page02 .div1 img {bottom:1px; left:-15px; width:278px; height:188px;}	
+	.teravi_page02 .div2 {height:auto; right: 0; top: 110px;}
+	.teravi_page02 .div2 img {top:15px; right:25px; width:210px; height:269px;}
+	
+	/* 테라비전- 03 */
+	.teravi_page03_wrap {height:529px; margin:-60px 0 0 0;}
+	.teravi_page03_wrap .bg_rectangle1, .teravi_page03_wrap .bg_rectangle2 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_page03 {height:529px;}
+	.teravi_page03 .div1 {height:auto; top: 85px; left: 0;}
+	.teravi_page03 .div1 img {top: 95px; left: 25px; width: 200px; height: auto;}
+	.teravi_page03 .div2 {height:529px;}
+	.teravi_page03 .div2 .text {top: 100px; left: 30px; text-align: left;}
+	.teravi_page03 .div2 h3 {font-size:27px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page03 .div2 p {line-height:15px; letter-spacing:-0.5px;}
+	.teravi_page03 .div2 img {right:-15px; bottom:19px; width:278px; height:188px;}
+
+	/* 테라비전- 04 */
+	.teravi_page04_wrap {height:520px; margin:-60px 0 0 0;}
+	.teravi_page04 {height:520px;}
+	.teravi_page04 .div1 {height:520px;}
+	.teravi_page04 .div1 .text {top: 50px; text-align: right; left: auto; right: 30px;}
+	.teravi_page04 .div1 h3 {font-size:28px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page04 .div1 p {font-size:11px; line-height:16px; letter-spacing:-0.5px;}
+	.teravi_page04 .div1 img {bottom:1px; left:-15px; width:278px; height:188px;}	
+	.teravi_page04 .div2 {height:auto; top: 115px;}
+	.teravi_page04 .div2 img {top: 25px; right: 25px; width: auto; height: 240px;}
+	
+	/* 테라비전- 05 */
+	.teravi_page05_wrap {height:529px; margin:-60px 0 0 0;}
+	.teravi_page05_wrap .bg_rectangle1 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_page05_wrap .bg_rectangle2 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_page05 {height:529px;}
+	.teravi_page05 .div1 {height:auto; top: 100px;}
+	.teravi_page05 .div1 img {top: 45px; left: 25px; width: 200px; height: 254px;}
+	.teravi_page05 .div2 {height:529px;}
+	.teravi_page05 .div2 .text {top: 100px; left: 30px; text-align: left;}
+	.teravi_page05 .div2 h3 {font-size:27px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page05 .div2 p {line-height:15px; letter-spacing:-0.5px;}
+	.teravi_page05 .div2 img {right:-15px; bottom:18px; width:278px; height:188px;}
+	
+	/* 테라비전- 06 */
+	.teravi_page06_wrap {height:520px; margin:-60px 0 0 0;}
+	.teravi_page06 {height:520px;}
+	.teravi_page06 .div1 {height:520px;}
+	.teravi_page06 .div1 .text {top: 50px; text-align: right; left: auto; right: 30px;}
+	.teravi_page06 .div1 h3 {font-size:28px; line-height:33px; letter-spacing:-2px; margin-bottom: 10px;}
+	.teravi_page06 .div1 p {font-size:10.5px; line-height:16px; letter-spacing:-0.5px;}
+	.teravi_page06 .div1 img {bottom:9px; left:-15px; width:278px; height:188px;}	
+	.teravi_page06 .div2 {height:auto; top: 110px;}
+	.teravi_page06 .div2 img {top: 20px; right: 30px; width: 240px; height: 269px;}
+
+	/* 테라비전- outro */
+	.teravi_outro_wrap {height:358px; margin:-68px 0 0 0;}
+	.teravi_outro_wrap .bg_rectangle1 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_outro_wrap .bg_rectangle2 {top:55px; width:2099px; height:419px; margin:0 0 0 -1049px;}
+	.teravi_outro {height:470px;}
+	.teravi_outro .title {top:120px; width:auto; margin:0 0 0 27px;}
+	.teravi_outro .title h1 {width:auto;}
+	.teravi_outro .title h1 img {width:180px; height:auto;}
+	.teravi_outro .title .outro-desc {font-size: 12px; margin-top: 20px; max-width: 90%;}
+	.teravi_outro > p {top:290px; margin:0 0 0 27px; font-size:10.5px;}
+	.teravi_outro .illust_3 {top:145px; width:722px; height:236px; margin:0 0 0 -180px;}
+
+	/* 맨위로 플로팅 버튼 */
+	.floatbtn_pagetop {right:13px; bottom:24px; width:48px; height:48px; border-radius:25px; background-size:30px;}
+}

@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+@media all and (max-width:375px){
+
+	/* 테라비전- 01 */
+	.teravi_page01 .div2 img {bottom:18px;}
+
+	/* 테라비전- 02 */
+	.teravi_page02 .div1 img {bottom:-16px;}	
+	
+	/* 테라비전- 03 */
+	.teravi_page03 .div2 img {bottom:17px;}
+
+	/* 테라비전- 04 */
+	.teravi_page04 .div1 img {bottom:-20px;}	
+
+	/* 테라비전- 05 */
+	.teravi_page05 .div2 img {bottom:18px;}
+	
+	/* 테라비전- 06 */
+	.teravi_page06 .div1 img {bottom:-11px;}	
+}
