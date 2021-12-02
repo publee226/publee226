@@ -1,0 +1,40 @@
+@charset "utf-8";
+body {background: #00020b; min-width: 320px;}
+
+#container {position: relative; height: 100%;}
+.bg {position: absolute; left: 0; top: 0; width: 100%; height: 100%; background:#00020b url(../images/bg.jpg) no-repeat center center; background-size: contain; opacity: 0; animation: fadeIn .5s ease-in-out both;}
+.wrapper {width: 1200px; height: 100%; margin: 0 auto; position: relative;}
+
+@keyframes fadeIn {
+  100% {opacity: 1;}
+}
+
+.title {padding: 100px 0 60px; text-align: center;}
+.title span, .title h2 {text-transform: uppercase; line-height: 1;}
+.title span {color: #fff; font-size: 26px; font-weight: 500; margin-bottom: 15px;}
+.title h2 {color: #fff; font-size: 32px; font-weight: 300; margin-bottom: 25px;}
+.title p {color: #5e6483; font-size: 14px; word-break: keep-all; letter-spacing: 0.1px;}
+
+.logos {width: 520px; padding: 10px 0; box-sizing: border-box; background: rgba(255,255,255,.1); border-radius: 40px; margin: 0 auto; text-align: center;}
+.logo {width: 190px; height: 38px; display: inline-block; vertical-align: middle;}
+.logo img {width: 100%;}
+.logos .by {position: relative; display: inline-block; margin: 0 25px; width: 20px; height: 20px; vertical-align: middle;}
+.logos .by img {width: 100%; opacity: .5;}
+.logos .by::before {content: ""; position: absolute; width: 56px; height: 56px; background: rgba(255,255,255,.1); border-radius: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+
+.btns {margin: 45px auto 0; width: 670px;}
+.btns ul {margin: 0 auto;}
+.btns ul:after {content:""; width:100%; display:block; visibility:hidden; clear:both;}
+.btns li {float: left; margin-right: 30px;}
+.btns li:last-child {margin-right: 0;}
+.btns .btn {position: relative; width: 320px; height: 100px; border-radius: 10px; transition: .3s ease-in-out;}
+.btn .txt {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; text-transform: uppercase; font-size: 12px; font-weight: 400; line-height: 1.5; transition: .3s ease-in-out;}
+.btn .txt strong {font-size: 22px; font-weight: 500;}
+.btn-user {background-color: #e7630d;}
+.btn-user .txt {color: #fff;}
+.btn-user:hover, .btn-user:focus {box-shadow: 0 0.5em 1em -0.4em #e7630d; transform: translateY(-0.25em);}
+.btn-admin {background-color: #fff;}
+.btn-admin .txt {color: #01288a;}
+.btn-admin:hover, .btn-admin:focus {box-shadow: 0 0.5em 1em -0.4em #01288a; transform: translateY(-0.25em);}
+
+.copyright {position: absolute; width: 100%; left: 50%; transform: translateX(-50%); bottom: 35px; color: #585d78; font-size: 14px; text-align: center; text-transform: uppercase;}
