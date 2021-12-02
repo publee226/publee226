@@ -17,10 +17,10 @@ $(function() {
 		$('.mobile_btn span').css('background-color','#000');
 	}
 
-	//스크롤 시, 계산된 pageNum에 맞춰서 섹션 이동
+	// 스크롤 시, 계산된 pageNum에 맞춰서 섹션 이동
 	$html.animate({"scrollTop":(pageNum-1) * $(window).height() }, 100);
 	
-	/* smooth scroll to top */
+	// to-top버튼 클릭 시 부드럽게 스크롤 이동
 	$(".to-top").on("click", function (e) {
 		e.preventDefault();
 		const href = $(this).attr("href");
@@ -67,10 +67,10 @@ $(function() {
 	});
 
 
-	/* first bullet default */
+	// first bullet default
 	$bullet.children(":first").addClass("fixedOn");
 
-	/* page1: hide to-top button */ 
+	// page1: hide to-top button
 	var page2 = document.getElementById("page2");
 	var page2Top = page2.offsetTop;
 
@@ -109,7 +109,6 @@ $(function() {
 	
 		var position = $(`#page${pageNum}`).offset();
 	
-		//html?�소?? aniamte메서?��? ?�용?? 계산?? ?�치�? ?�크�?
 		$html.animate({"scrollTop": position.top}, function() {
 			scrolling = false;
 		})
@@ -132,8 +131,6 @@ $(function() {
 		}
 	});
 	
-
-
 	//culture : prev, next 버튼 클릭 시 카드 슬라이드
 	const track = document.querySelector('.carousel-track');
 	const slides = Array.from(track.children);
@@ -218,17 +215,14 @@ $(function() {
 	
 	
 
-	//scrollTop버튼?? ?�릭?�면 첫페?��?�? ?�라�??�록 만든??.
-	//?�재 ?�면?? 보이?? ?�이�??? 번호�? ?��??�는 �???
 	var page = 1; //page
 	var scrolling = false;
 
 	page = Math.round($(window).scrollTop() / $(window).height()) + 1;
 
-
-
-	//?�사메뉴 ?�릭?? ?�진 ?��?�? �?�?
-	// page4 : �Ļ� �޴�
+	
+	
+	// 갤러리 : Swiper 슬라이더
 	var $gallery_show = $('#page5 .gallery-top .swiper-wrapper .swiper-slide a');
 	var $gallery_item = $('#page5 .gallery-thumbs .swiper-wrapper .swiper-slide a');
 	
@@ -239,9 +233,7 @@ $(function() {
 		event.preventDefault();
 	});
 
-	
-	
-	// ?�사메뉴
+	// 갤러리 영역 썸네일
 	var galleryThumbs = new Swiper('#page5 .gallery-thumbs', {
 			spaceBetween: 10,
 			slidesPerView: 5,
@@ -297,9 +289,6 @@ $(function() {
 		}
 	});
 
-
-
-	//page6 gallery
 	var $gallery_show = $('#page7 .gallery-top .swiper-wrapper .swiper-slide a');
 	var $gallery_item = $('#page7 .gallery-thumbs .swiper-wrapper .swiper-slide a');
 	
@@ -310,9 +299,6 @@ $(function() {
 		event.preventDefault();
 	});
 
-
-	
-	// grid-gallery swiper + swipebox
 	var galleryGrid = new Swiper('#page7 .grid-gallery', {
 		spaceBetween: 10,
 		navigation: {
@@ -348,9 +334,9 @@ $(function() {
 	})
 
 	// menu click -> menu hide
-  $('.fixedIcon > ul > li a').click(function(){
-    $('.fixedIcon, .mobile_btn').removeClass('active');
-  })
+  	$('.fixedIcon > ul > li a').click(function(){
+    	  $('.fixedIcon, .mobile_btn').removeClass('active');
+	})
 
 	// 스크롤 시 배경, 모바일 버튼 색상 전환 애니메이션
 	var windowWidth = $(window).width();
@@ -371,7 +357,6 @@ $(function() {
 		}
 		window.addEventListener('scroll', bgChanger);
 	}
-
 
 	// 오시는 길 : 반응형 이미지 맵
 	$('img[usemap]').rwdImageMaps();
