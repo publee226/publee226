@@ -1,0 +1,396 @@
+<script type="text/javascript" src="/kendo/script/kendo.all.min.js"></script>
+<script type="text/javascript" src="/plugins/datatables/jquery.dataTables.min.js"></script>
+<script>
+	var selectedNavTab = function() {
+		var nav = $("ul.nav-tabs-root").find("li a.active").parent().data("index");
+		$("#userNav"+nav).parent().addClass("active show");
+		return $("#userNav"+nav).find("li a.active").parent().data();
+	}
+
+	var documentReady = function() {
+		/*	
+		$("#userNav input[type=radio]").on("change", webAppNav_onClick);
+		$("#userNav1 li.first").click();
+		var o = $("#userNav1 li.first");
+		console.log(o);
+		*/				
+		//$("ul[id^=userNav] li").on("click", webAppNav_onClick);						
+		
+		$(".nav-tabs li").on("click", function(){
+			webAppLoadView_User(this.dataset);
+		});
+
+		webAppLoadView_User(selectedNavTab());						
+	};
+	
+	var kendo_createChart = function(prop, attr) {
+		
+		if(isArr(attr)) {
+			for(var i=0;i<attr.length;i++) {
+				var item = attr[i];				
+				prop.series[0].data = item.data;
+				prop.theme = item.theme;
+				$("#"+item.id).kendoChart(prop);
+			}
+		}
+		else {
+			//prop.series[0].data = attr.data;
+			$("#"+attr.id).kendoChart(prop);
+		}
+	};
+	
+	/*		
+	$(document).bind("kendo:skinChange", function(){		
+		statMain_createChart();		
+		
+	});
+	*/
+	
+	var kendo_resizeChart =  function(nav) {
+		
+		var dom = isDef(nav) ? selectedNavTab() : nav;
+		
+		switch(dom.menuSub)	{
+			case "main":
+		    	$("#statMainChart1").data("kendoChart").resize();
+		    	$("#statMainChart2").data("kendoChart").resize();
+		    	$("#statMainChart3").data("kendoChart").resize();		
+		    	$("#statMainChart4").data("kendoChart").resize();
+				break;				
+			case "pay":
+			    $("#statPayChart1").data("kendoChart").resize();
+			    $("#statPayChart2").data("kendoChart").resize();
+			    $("#statPayChart3").data("kendoChart").resize();
+			    break;
+			case "mlg":
+			    $("#statMlgChart1").data("kendoChart").resize();
+			    $("#statMlgChart2").data("kendoChart").resize();
+			    $("#statMlgChart3").data("kendoChart").resize();
+			    break;
+			case "batt":
+			    $("#statBattChart1").data("kendoChart").resize();
+			    $("#statBattChart2").data("kendoChart").resize();
+			    $("#statBattChart3").data("kendoChart").resize();	    
+				break;		
+		}	    	   		   	    
+	}
+		
+	$(window).resize(kendo_resizeChart);			
+</script>
+
+<style>
+
+	ul.nav-tabs {
+  		display: -webkit-box;
+  		display: -ms-flexbox;
+  		display: flex;
+  		-ms-flex-wrap: wrap;
+      		flex-wrap: wrap;
+  		list-style: none;
+	}
+	
+	.nav-tabs-root {
+  		padding-left: 0;
+  		margin-bottom: 0;
+  		align-items: center;
+		justify-content: center;
+	}	
+		
+	.nav-tabs-root li {		
+		width:300px;
+		height:50px;
+		font-family	: "SourceSansPro-Regular";
+		font-size	: 16px;				
+        display		: -webkit-inline-box;
+        display		: -ms-inline-flexbox;
+        display		: inline-flex;
+        -webkit-box-align	: center;
+            -ms-flex-align	: center;		
+        line-height		: normal;			        
+		align-items		: center;
+		text-align		: center;
+		justify-content	: center;
+		background		: transparent;		 
+		border			: 1px solid rgba(255,255,255,.3);
+	}	
+	
+	.nav-tabs-root li a {
+		width:100%; height:100%;
+		color		: #fff;
+  		line-height	: 3;		
+	}
+	
+	.nav-tabs-root li .active{ 
+		background-color: #0030CB;
+		color: #fff;	
+    	pointer-events: none;
+    	cursor: default;		
+	}
+
+	.nav-tabs-root li:first-child .active{border-radius: 25px 0 0 25px; border-right: 0px;}		
+	.nav-tabs-root li:last-child .active{border-radius: 0 25px 25px 0;}	
+	
+	.nav-tabs-root li a:hover { color: yellow; }	
+	
+	.nav-tabs-root li:nth-child(1) { border-radius: 25px 0 0 25px; border-right: 0px;}	 
+	.nav-tabs-root li:nth-child(2) { border-right: 0px;}
+	.nav-tabs-root li:nth-child(3) { border-right: 0px;}
+	.nav-tabs-root li:nth-child(4) { border-radius: 0 25px 25px 0;}
+	
+	.nav-tabs-user li a	{
+		color: #fff;
+    	font-family		: "NanumGothicBold";
+		font-size		: 14px;		
+		margin-right 	: 20px;
+	}
+	
+	.nav-tabs-user li .active 	{
+		color: #fff;	
+    	pointer-events: none;
+    	cursor: default;
+    	padding-bottom: 5px;
+    	border-bottom:solid 3px #0030CB;
+	}
+	.nav-tabs-user li a:hover 			{ color: yellow; }
+	.nav-tabs-user li a:hover(.active) 	{ color: #fff; }    	
+
+	.nav-tabs-user {
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;	  	     
+	}
+	
+	#userNav1 li:first-child { margin-left: 25px; }
+	#userNav2 li:first-child { margin-left: 325px; }
+	#userNav3 li:first-child { margin-left: 625px; }
+	#userNav4 li:first-child { margin-left: 925px; }	
+/*	#userNav4 li:first-child { margin-left: 895px; }*/
+		
+	.stat-title		{ text-align:center; }
+	.stat-title h2	{ color:#fff;	font-size:40px;}
+	.stat-title p	{ color:#fff;	font-size:14px;}
+	.panel-wrap {
+		text-align:center; 
+		border	:1px solid rgba(255,255,255,.2);
+		width	:100%;
+	}
+	.donut-chart {
+		height:280px;
+		cursor:pointer;
+	}
+	.line-chart { height:360px;}
+
+	.m-btns {display: none;}
+
+	.m-table {
+		display: none;
+		width: 100%;
+		max-height: 640px;
+		overflow: auto;
+	}
+	.table-caption {
+		width: 100%;
+		color: #fff;
+		font-family: 'AppleSDGothicNeo';
+		font-weight: 600;
+		font-size: 1.3rem;
+		text-align: center;
+		margin-bottom: 0;
+		margin-top: 3rem;
+		display: none;
+	}
+	.m-table table {width: 600px; background: rgba(255,255,255,.1);}
+	.m-table table caption {display: none;}
+	.m-table tr:nth-child(2n), .m-table thead tr {background-color: rgba(0,0,0,.5);}
+	.m-table th, .m-table td {color: #fff; padding: 10px;}
+	.m-table th {font-size: 1.067rem;}
+	.m-table td {font-size: 1rem;}
+
+	.map-modal {display: none;}
+
+
+	/* responsive */
+	@media (max-width:1260px) {
+		.page-header {width: 100%; padding: 0 4rem;}
+
+		.nav-tabs-root li {width: 25%;}
+		ul.nav-tabs {justify-content: center; width: 100%;}
+
+		#userNav1 li:first-child,
+		#userNav2 li:first-child,
+		#userNav3 li:first-child,
+		#userNav4 li:first-child {margin-left: 0;}
+		ul.nav-tabs-user {justify-content: space-evenly; width: 50%;}
+		.nav-tabs-user li a {margin-right: 0;}
+	}
+
+	@media (max-width:1024px) {
+		.page-wrapper {background: none;}
+
+		.m-btns {
+			padding: 0;
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+		}
+		.m-btns li {margin-left: 3rem;}
+		.m-btns li:first-child {margin-left: 0;}
+		.m-btns li a {
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			border: 1px solid #000;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			filter: invert(1);
+		}
+		.m-btns li a.ventil {background: url(/img/kevms/user/ventil.svg) no-repeat center; background-size: 50%;}
+		.m-btns li a.bonnet {background: url(/img/kevms/user/bonnet.svg) no-repeat center; background-size: 55%;}
+		.m-btns li a.lock {background: url(/img/kevms/user/lock.svg) no-repeat center; background-size: 34%;}
+	}
+
+	@media (max-width:990px) {
+		#statPayChart2,
+		#statMlgChart2,
+		#statBattChart2 {margin-top: 1.5rem;}
+	}
+
+	@media (max-width:768px) {
+		ul.nav-tabs-user {width: 100%;}
+
+		.bg-info-gradient {height: 100%;}
+	}
+
+	@media (max-width:620px) {
+		html {font-size: 14px !important;}
+
+		.nav-tabs-root li {
+			height: 40px;
+			font-size: 1rem;
+			border: none;
+		}
+		.nav-tabs-root li a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.nav-tabs-root li a:hover {color: #fff;}
+		.nav-tabs-root li .active {
+			background-color: #0030CB;
+			color: #fff;
+			border-radius: 5px;
+			filter: drop-shadow(0px 3px 3px #003083);
+		}
+		.nav-tabs-root li:first-child .active,
+		.nav-tabs-root li:last-child .active {
+			border-radius: 5px;
+		}
+
+		#statPayChart2,
+		#statMlgChart2,
+		#statBattChart2,
+		#statPayChart3,
+		#statMlgChart3,
+		#statBattChart3 {display: none;}
+
+		.m-table, .table-caption {display: block;}
+
+		#datatable-custQna_wrapper .table_basic {width: auto !important;}
+
+		.search_wrap {flex-wrap: wrap;}
+		.search_wrap select {
+			width: 100%;
+			height: 30px;
+			margin: 0 0 10px 0;
+		}
+		.search_wrap input {
+			width: calc(100% - 45px);
+			margin-right: 0;
+		}
+
+		.btn_search {display: none;}
+		.m_btn_search {display: block;}
+
+		.map-modal {display: block;}
+
+		.modal-sm {max-width: 300px;}
+	}
+
+	@media (max-width:410px) {
+		.table_basic {width: auto !important;}
+
+		.btn_group button {width: 100%;}
+		.btn_group button:first-child {margin-bottom: 10px;}
+	}
+
+	@media (max-width:320px) {
+		html {font-size: 12px !important;}
+
+		.nav-tabs-root li {width: 50%;}
+	}
+</style>
+
+ <div class="row"> 
+ 	<div class="col-lg-12">
+ 	
+	 	 <ul id=nav-root class="nav nav-tabs nav-tabs-root" role="tablist">
+	 	 	<!-- waves-effect waves-themed-->
+		    <li data-user-nav="sctr" data-index=1><a data-toggle="tab" href="#tab-1" class="active">SCOOTER</a></li>
+		    <li data-user-nav="stat" data-index=2><a data-toggle="tab" href="#tab-2">DASHBOARD</a></li>
+		    <li data-user-nav="chrs" data-index=3><a data-toggle="tab" href="#tab-3">EV-STATION</a></li>
+		    <li data-user-nav="cust" data-index=4><a data-toggle="tab" href="#tab-4">SUPPORT</a></li>
+		</ul>
+												
+		<div class="tab-content pt-3 ">
+		    <div class="tab-pane fade" id="tab-1" role="tabpanel">		        		    		    	
+		    	<ul id="userNav1" class="nav nav-tabs nav-tabs-user" role="tablist">
+		    		<li data-user-nav="sctr" data-menu-sub="sts"><a data-toggle="tab" href="#sctrSts" class="active">STATUS</a></li>
+		    		<!--<li data-user-nav="sctr" data-menu-sub="spec"><a data-toggle="tab" href="#sctrSpec">SPEC</a></li>
+				    <li data-user-nav="sctr" data-menu-sub="sett"><a data-toggle="tab" href="#sctrSett">SETTINGS</a></li>-->
+				</ul>				
+				<div class="tab-content pt-3">
+		    		<div class="tab-pane fade" id="sctrSts" role="tabpanel"></div>
+		    		<div class="tab-pane fade" id="sctrSpec" role="tabpanel"></div>
+		    		<div class="tab-pane fade" id="sctrSett" role="tabpanel"></div>
+				</div>    			    	
+		    </div>
+		    <div class="tab-pane fade" id="tab-2" role="tabpanel">
+		    	<ul id="userNav2" class="nav nav-tabs nav-tabs-user" role="tablist">
+		    		<li data-user-nav="stat" data-menu-sub="main"><a data-toggle="tab" href="#statMain" class="active">STATS.</a></li>
+		    		<li data-user-nav="stat" data-menu-sub="pay"><a data-toggle="tab" href="#statPay">PAYMENT</a></li>
+				    <li data-user-nav="stat" data-menu-sub="mlg"><a data-toggle="tab" href="#statMlg">MILEAGE</a></li>
+				    <li data-user-nav="stat" data-menu-sub="batt"><a data-toggle="tab" href="#statBatt">BATTERY</a></li>
+				</ul>
+				<div class="tab-content p-3">
+		    		<div class="tab-pane fade" id="statMain" role="tabpanel"></div>
+		    		<div class="tab-pane fade" id="statPay" role="tabpanel"></div>
+		    		<div class="tab-pane fade" id="statMlg" role="tabpanel"></div>
+		    		<div class="tab-pane fade" id="statBatt" role="tabpanel"></div>
+				</div>								
+		    </div>
+		    <div class="tab-pane fade" id="tab-3" role="tabpanel">        
+		    	<ul id="userNav3" class="nav nav-tabs nav-tabs-user" role="tablist">
+		    		<li data-user-nav="chrs" data-menu-sub="map"><a data-toggle="tab" href="#chrsMap" class="active">MAP</a></li>
+				</ul>
+				<div class="tab-content p-3">
+		    		<div class="tab-pane fade" id="chrsMap" role="tabpanel"></div>
+				</div>				                        
+		    </div>
+			<div class="tab-pane fade" id="tab-4" role="tabpanel">
+				<ul id="userNav4" class="nav nav-tabs nav-tabs-user" role="tablist">
+					<li data-user-nav="cust" data-menu-sub="nti"><a data-toggle="tab" href="#custNti" class="active">NOTICE</a></li>
+					<li data-user-nav="cust" data-menu-sub="faq"><a data-toggle="tab" href="#custFaq">FAQ</a></li>
+					<li data-user-nav="cust" data-menu-sub="qna"><a data-toggle="tab" href="#custQna">Q&A</a></li>
+				</ul>
+				<div class="tab-content p-3">
+					<div class="tab-pane fade" id="custNti" role="tabpanel"></div>
+					<div class="tab-pane fade" id="custFaq" role="tabpanel"></div>
+					<div class="tab-pane fade" id="custQna" role="tabpanel"></div>
+					<div class="tab-pane fade" id="custQnaWrite" role="tabpanel"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
