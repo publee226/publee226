@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>석란</title>
+
+  <link rel="stylesheet" href="css/swiper.css">
+  <link rel="stylesheet" href="../common/swipebox.min.css">
+  <link rel="stylesheet" href="../common/jquery.mCustomScrollbar.css" type="text/css">
+  <link rel="stylesheet" href="../common/reset.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+
+  <script src="../common/js/jquery.min.js"></script>
+  <script src="../common/js/jquery-ui.min.js"></script>
+  <script src="script/swiper.js"></script>
+  <script src="../common/js/jquery.swipebox.min.js"></script>
+  <script src="../common/js/jquery-rwdImageMaps.min.js"></script>
+	<script src="../common/js/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../common/jquery-cookie.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      /*Tabs*/
+      // Depth1
+      $('[class^="tab_menu"] > li > a').on('click', function(){
+        $(this).parent().siblings().removeClass('on');
+        $(this).parent().addClass('on');
+        $(this).parent().parent().siblings('[class^="tab_container"]').children('[class^="tab_content"]').hide();
+        $(this).parent().parent().siblings('[class^="tab_container"]').children('[class^="tab_content"]').eq( $(this).parent().index() ).addClass('on').fadeIn();
+      });
+      // Depth2
+      $('[class^="depth2"] > li > a').on('click', function(){
+        $(this).parent().siblings().removeClass('on');
+        $(this).parent().addClass('on');
+        $(this).parent().parent().siblings('[class^="tab_item_list"]').children().hide();
+        $(this).parent().parent().siblings('[class^="tab_item_list"]').children().eq( $(this).parent().index() ).addClass('on').fadeIn();
+      });
+      $(".table_wrap").mCustomScrollbar({
+        theme:"dark-3",
+        mouseWheelPixels : 300,
+        scrollInertia : 400,
+        advanced:{autoExpandHorizontalScroll:true}
+      });
+    });			
+  </script>
+  <script src="script/script.js"></script>
+</head>
+
+<body>
+  <section class="page page1" id="page1">
+  <a class="home_btn" id="home_btn" onclick="location.href='../../index.html'" tabindex="0"><span>홈</span></a>
+  <a href="#page1" class="to-top">
+    <img src="../common/arrow-right.png" alt="첫 페이지로 이동">
+  </a>
+  <div class="main-image"></div>
+  <div class="title"> 
+    <img src="images/s_sub_title.png" alt="차공간">	
+    <div class="title_wrap">
+      <h2>석 란</h2>
+      <img src="images/top_logo.png" alt="logo">
+      <p>
+        <span>중국 6대차류 (녹차, 백차, 황차, 청차, 홍차, 흑차) 를</span> <span>편안하고
+          기품있게 즐기실수 있는</span> <span><img src="images/s_sub_title.png" alt="차공간"> 석란입니다.</span>
+      </p>
+    </div>
+    </div>
+    <div class="fixedIcon">
+      <ul>
+        <li class="fixedOn"><a href="#page1"><span class="circle"></span></a><em><span class="line"></span>메인</em></li>
+        <li><a href="#page2"><span class="circle"></span></a><em><span class="line"></span>석란</em></li>
+        <li><a href="#page3"><span class="circle"></span></a><em><span class="line"></span>보유 차 목록</em></li>
+        <li><a href="#page4"><span class="circle"></span></a><em><span class="line"></span>차 리스트</em></li>
+        <li><a href="#page5"><span class="circle"></span></a><em><span class="line"></span>석란 차회</em></li>
+        <li><a href="#page6"><span class="circle"></span></a><em><span class="line"></span>갤러리</em></li>
+        <li><a href="#page7"><span class="circle"></span></a><em><span class="line"></span>오시는 길</em></li>
+      </ul>
+      <a href="../woodeumji/wine.html" class="go-to-link"><span class="circle"></span><span class="line"></span><span class="link-txt">우듬지</span></a>
+    </div>
+    <div class="mobile_btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </section>
+  <section class="page page2" id="page2">
+    <h2 class="hide">석란 소개</h2>
+    <div class="page2-content">
+      <div class="img">
+        <img src="images/page2_teapots.png" alt="석란 차기">
+      </div>
+      <p class="desc">
+        <span>석란은 중국차 전문 차공간입니다.</span> <span>엄선된 중국 차류들을 기품있는 다구와 편안한 분위기에서</span> <span>즐길 수 있습니다.</span>
+      </p>
+    </div>
+  </section>
+  <section class="page notice" id="page3">
+    <div class="notice-container">
+      <div class="page3_title_wrap">
+        <img src="images/page3_t.png" alt="">
+        <h4>보유 차 목록</h4>
+        <img src="images/page3_t.png" alt="">
+      </div>
+      <div class="b_info_box">
+        <div class="info-left">
+          <div class="img">
+            <img src="images/notice-img.png" alt="">
+          </div>
+        </div>
+        <ul class="list_1">
+          <li>기본 시음비는 차 두 종류에 10,000원입니다.<br>이후 차 한 종류당 5,000원의 추가 시음비를 받습니다.</li>
+          <li>노차나 고가의 차들은 별도의 시음비를 받습니다.</span></li>
+          <li>차 구매 고객은 시음비를 받지 않습니다.</li>
+          <li>주문 관련 문의는 010-9469-3354로 연락주세요.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="page page3 page3_1 tea-list" id="page4">
+    <h2 class="hide">보유 차 목록</h2>
+    <div class="page_top"></div>
+    <div class="page_container">
+      <div class="page3_wrap_div">
+        <div class="page3_wrap">
+          <div class="tab_panel">
+            <ul class="tab_menu">
+              <li class="on"><a href="#wlist_d1_01">녹차,백차,홍차</a></li>
+              <li><a href="#wlist_d1_02">청차</a></li>
+              <li><a href="#wlist_d1_03">보이 숙차</a></li>
+              <li><a href="#wlist_d1_04">보이 생차</a></li>
+              <li><a href="#wlist_d1_05">흑차</a></li>
+            </ul>
+            <div class="tab_container">
+              <!-- 녹차,백차,홍차 리스트 -->
+              <div class="tab_content on">
+                <ul class="depth2 col5">
+                  <li class="on"><a href="#w_tb_0101">녹차</a></li>
+                  <li><a href="#w_tb_0102">백차</a></li>
+                  <li><a href="#w_tb_0103">홍차</a></li>
+                </ul>
+                <ul class="tab_item_list">
+                  <li style="display:block">
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">녹차 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>녹차</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>절강성 서호용정</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td>사천성 몽정감로</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td>절강성 안길백차</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td>안휘성 태평후괴</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>보성 우전 녹차</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td>화개 야생녹차</td>
+                            <td>2020</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">백차 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>백차</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>복정 백호은침, 병차</td>
+                            <td>2011</td>
+                          </tr>
+                          <tr>
+                            <td>복정 백호은침, 산차</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td>복정 백모단</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td>복정백차 수미</td>
+                            <td>2017</td>
+                          </tr>
+                          <tr>
+                            <td>야생 복정백차 고산일쇄</td>
+                            <td>2017</td>
+                          </tr>
+                          <tr>
+                            <td>운남 석가고수백차</td>
+                            <td>2017</td>
+                          </tr>
+                          <tr>
+                            <td>운남 홍허 노백차</td>
+                            <td>2009</td>
+                          </tr>
+                          <tr>
+                            <td>운남 경곡대백차, 고수백호</td>
+                            <td>2021</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">홍차 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>홍차</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>정산소종 송연향</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>정산소종 계원향</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>금준미</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>극품기문홍차</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>기문홍차, 홍향라</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td>이싱명전홍차</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>운남 유기농 전홍</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td>대만 홍운홍차</td>
+                            <td>2020</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                </ul>
+              </div>
+              <!-- // 녹차,백차,홍차 리스트 -->
+              <!-- 청차 리스트 -->
+              <div class="tab_content">
+                <ul class="depth2 col5">
+                  <li class="on"><a href="#w_tb_0101">무이암차</a></li>
+                  <li><a href="#w_tb_0102">대만오룡</a></li>
+                  <li><a href="#w_tb_0103">광동오룡</a></li>
+                  <li><a href="#w_tb_0105">청차 노차</a></li>
+                </ul>
+                <ul class="tab_item_list">
+                  <li style="display:block">
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">무이암차 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>무이암차</caption>
+                        <thead>
+                          <tr>
+                            <th colspan="2">차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td rowspan="6">일반방식</td>
+                            <td>구룡과 야생대홍포</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>기단</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>수렴동 육계</td>
+                            <td>2017</td>
+                          </tr>
+                          <tr>
+                            <td>우란갱 육계</td>
+                            <td>2017</td>
+                          </tr>
+                          <tr>
+                            <td>마두암 육계</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>백년노총수선</td>
+                            <td>2015</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="11">전통방식</td>
+                            <td>대홍포 죽과암</td>
+                            <td>2013</td>
+                          </tr>
+                          <tr>
+                            <td>대홍포 구룡간 화과향</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td>백계관 혜원외귀동</td>
+                            <td>2009</td>
+                          </tr>
+                          <tr>
+                            <td>백계관</td>
+                            <td>2013</td>
+                          </tr>
+                          <tr>
+                            <td>철라한 혜원갱</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td>육계왕 마두암</td>
+                            <td>2016</td>
+                          </tr>
+                          <tr>
+                            <td>우란갱 육계</td>
+                            <td>2016</td>
+                          </tr>
+                          <tr>
+                            <td>노총 수선왕 극품</td>
+                            <td>2016</td>
+                          </tr>
+                          <tr>
+                            <td>백년노총수선 不见天 혜원내귀동</td>
+                            <td>2016</td>
+                          </tr>
+                          <tr>
+                            <td>수선왕 혜원갱</td>
+                            <td>2016</td>
+                          </tr>
+                          <tr>
+                            <td>극품암차 세트 (대홍포 죽과암
+                              백년노수 철라한 봉과갱
+                              백계관 혜원외귀동)</td>
+                            <td>2008</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">대만오룡 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>대만오룡</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>동방미인, 여름</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>대우령, 동차</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>아리산 오룡, 동차</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>전통 오룡, 동차</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>정총철관음</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>황룡차 7호, 초동차</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td>황룡차 11호</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>황룡차 13호, 동차</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>동정오룡, 동차</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>옌차</td>
+                            <td>2015</td>
+                          </tr>
+                          <tr>
+                            <td>옌차 N-23, 동차</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>금훤, 청향</td>
+                            <td>2021</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">광동오룡 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>광동오룡</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>봉황단총 오동 밀란향</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td>봉황단총 오동 송종</td>
+                            <td>2020</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">청차 노차 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>청차 노차</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>대홍포</td>
+                            <td>1994</td>
+                          </tr>
+                          <tr>
+                            <td>무이 수선</td>
+                            <td>1990</td>
+                          </tr>
+                          <tr>
+                            <td>목책철관음</td>
+                            <td>1994</td>
+                          </tr>
+                          <tr>
+                            <td>노동정오룡</td>
+                            <td>1990</td>
+                          </tr>
+                          <tr>
+                            <td>노동정오룡</td>
+                            <td>1982</td>
+                          </tr>
+                          <tr>
+                            <td>포종</td>
+                            <td>80년대</td>
+                          </tr>
+                          <tr>
+                            <td>송종 조취</td>
+                            <td>1960</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                </ul>
+              </div>
+              <!-- /청차 리스트 -->
+              <!-- 보이 숙차 리스트 -->
+              <div class="tab_content ">
+                <ul class="depth2 col5">
+                  <li class="on"><a href="#w_tb_0101">보이 숙차</a></li>
+                </ul>
+                <ul class="tab_item_list">
+                  <li style="display:block">
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">보이 숙차 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>보이 숙차</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>곤명숙전, 95</td>
+                            <td>1995</td>
+                          </tr>
+                          <tr>
+                            <td>중차공사 보이숙전</td>
+                            <td>2000</td>
+                          </tr>
+                          <tr>
+                            <td>두기 화천하</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>이기곡장 백작호 노차두(차교5년진)</td>
+                            <td>2020</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                </ul>
+              </div>
+              <!-- /보이 숙차 리스트 -->
+              <!-- 보이 생차 리스트 -->
+              <div class="tab_content ">
+                <ul class="depth2 col5">
+                  <li class="on"><a href="#w_tb_0101">노차</a></li>
+                  <li><a href="#w_tb_0102">중기차</a></li>
+                  <li><a href="#w_tb_0103">2000년대 이후 하관차창</a></li>
+                  <li><a href="#w_tb_0104">대익패</a></li>
+                  <li><a href="#w_tb_0105">고수차</a></li>
+                  <li><a href="#w_tb_0106">기타</a></li>
+                  <li><a href="#w_tb_0107">차고</a></li>
+                </ul>
+                <ul class="tab_item_list">
+                  <li style="display:block">
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">노차 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>노차</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>70년대 광운공병</td>
+                            <td>1972</td>
+                          </tr>
+                          <tr>
+                            <td>70년대말 이무 대전차</td>
+                            <td>1970</td>
+                          </tr>
+                          <tr>
+                            <td>맹해차창 대구중 7542</td>
+                            <td>1980</td>
+                          </tr>
+                          <tr>
+                            <td>맹해차창 80년대 초반 후지 7542</td>
+                            <td>1980</td>
+                          </tr>
+                          <tr>
+                            <td>맹해차창 박지 8582, 80후반</td>
+                            <td>1986</td>
+                          </tr>
+                          <tr>
+                            <td>하관차창 80년대 초반 번체자철병</td>
+                            <td>1980</td>
+                          </tr>
+                          <tr>
+                            <td>무지대타차 80년대말</td>
+                            <td>1980</td>
+                          </tr>
+                          <tr>
+                            <td>동창황기 복간, 90년대 중반</td>
+                            <td>90 중</td>
+                          </tr>
+                          <tr>
+                            <td>맹해차창 7542 사업청</td>
+                            <td>1994</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">중기차 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>중기차</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>맹해차창 7542, 95</td>
+                            <td>1995</td>
+                          </tr>
+                          <tr>
+                            <td>맹해차창 7542, 97</td>
+                            <td>1997</td>
+                          </tr>
+                          <tr>
+                            <td>맹해차창 태문 7542</td>
+                            <td>1999</td>
+                          </tr>
+                          <tr>
+                            <td>중차공사 8582, 98</td>
+                            <td>1998</td>
+                          </tr>
+                          <tr>
+                            <td>하관 번체자철병</td>
+                            <td>1999</td>
+                          </tr>
+                          <tr>
+                            <td>90년대 소황인</td>
+                            <td>1999</td>
+                          </tr>
+                          <tr>
+                            <td>용원호 야생차 기념병 (2006년 중국 10대 보이차창 중 하나)</td>
+                            <td>1999</td>
+                          </tr>
+                          <tr>
+                            <td>중차공사 중차패 녹인 청병</td>
+                            <td>2000</td>
+                          </tr>
+                          <tr>
+                            <td>중차공사 중차패 녹인 청병</td>
+                            <td>2001</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">2000년대 이후 하관차창
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>2000년대 이후 하관차창</caption>
+                        <thead>
+                          <tr>
+                            <th colspan="2">차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td rowspan="5">하관 5대 금강 청병, 2003</td>
+                            <td>하관 홍인</td>
+                            <td>2003</td>
+                          </tr>
+                          <tr>
+                            <td>하관 질검병</td>
+                            <td>2003</td>
+                          </tr>
+                          <tr>
+                            <td>하관 갑급람인</td>
+                            <td>2003</td>
+                          </tr>
+                          <tr>
+                            <td>하관 미술자</td>
+                            <td>2003</td>
+                          </tr>
+                          <tr>
+                            <td>하관 을급녹인</td>
+                            <td>2003</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="8">2000년대 이후 하관차창</td>
+                            <td>하관송학번체자철병</td>
+                            <td>2004</td>
+                          </tr>
+                          <tr>
+                            <td>하관철병 T8633</td>
+                            <td>2005</td>
+                          </tr>
+                          <tr>
+                            <td>하관청병 8603</td>
+                            <td>2005</td>
+                          </tr>
+                          <tr>
+                            <td>하관 보염체 전차</td>
+                            <td>2005</td>
+                          </tr>
+                          <tr>
+                            <td>하관 소철병(대만, FT)</td>
+                            <td>2006</td>
+                          </tr>
+                          <tr>
+                            <td>하관 포랑원차</td>
+                            <td>2010</td>
+                          </tr>
+                          <tr>
+                            <td>하관특급청병 FT</td>
+                            <td>2012</td>
+                          </tr>
+                          <tr>
+                            <td>하관 보염긴차, 일기일회</td>
+                            <td>2015</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">대익패 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>대익패</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>대익 7542</td>
+                            <td>2010</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">고수차 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>고수차</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>무위산방 이무 장가만 소병</td>
+                            <td>2001</td>
+                          </tr>
+                          <tr>
+                            <td>무위산방 반장왕, 노반장 춘차</td>
+                            <td>2005</td>
+                          </tr>
+                          <tr>
+                            <td>무위산방 천지인화 십이지산</td>
+                            <td>2007</td>
+                          </tr>
+                          <tr>
+                            <td>무위산방 만전 일과수</td>
+                            <td>2013</td>
+                          </tr>
+                          <tr>
+                            <td>무위산방 이무사장</td>
+                            <td>2016</td>
+                          </tr>
+                          <tr>
+                            <td>무위산방 만전사장</td>
+                            <td>2016</td>
+                          </tr>
+                          <tr>
+                            <td>무위산방 이무야생교목</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td>무위산방 만전야생교목</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>연화정 이무고수차</td>
+                            <td>2013</td>
+                          </tr>
+                          <tr>
+                            <td>연화정 이무고수차</td>
+                            <td>2014</td>
+                          </tr>
+                          <tr>
+                            <td>연화정 이무고수차</td>
+                            <td>2010</td>
+                          </tr>
+                          <tr>
+                            <td>연화정 임창 교목 생태 청병</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>연화정 임창, 09</td>
+                            <td>2009</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>죽로재 포랑산 노수차</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td>죽로재 이무고수차</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>이태룡, 정산지미</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td>이태룡, 마흑채 2018</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td>이태룡, 마흑채 2019</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td>이태룡, 향당 2019</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td>이태룡, 괄풍채</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td>이태룡, 만궁</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td>이태룡, 박하당</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>오운산 활죽양자 야생차왕수</td>
+                            <td>2021</td>
+                          </tr>
+                          <tr>
+                            <td>오운산 홍허 노차</td>
+                            <td>2009</td>
+                          </tr>
+                          <tr>
+                            <td>오운산 홍허야생차</td>
+                            <td>2010</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">기타
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>기타</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>이창호 진품, 05</td>
+                            <td>2005</td>
+                          </tr>
+                          <tr>
+                            <td>창태차창 금죽산 천가채 야생원차</td>
+                            <td>2005</td>
+                          </tr>
+                          <tr>
+                            <td>포랑금추청병,양위화</td>
+                            <td>2013</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">차고 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>차고</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>전보차창, 이무고차수 차고</td>
+                            <td>1996</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                </ul>
+              </div>
+              <!-- /보이 생차 리스트 -->
+              <!-- 흑차 리스트 -->
+              <div class="tab_content">
+                <ul class="depth2 col5">
+                  <li class="on"><a href="#w_tb_0101">안화흑차, 백사계</a></li>
+                  <li><a href="#w_tb_0102">광서 육보차, 오주차창</a></li>
+                  <li><a href="#w_tb_0103">안휘 육안차</a></li>
+                </ul>
+                <ul class="tab_item_list">
+                  <li style="display:block">
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">안화흑차, 백사계 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>안화흑차, 백사계</caption>
+                        <thead>
+                          <tr>
+                            <th colspan="2">차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td rowspan="5">복전차</td>
+                            <td>백사계 특제 복전차</td>
+                            <td>1996</td>
+                          </tr>
+                          <tr>
+                            <td>백사계 덕화경 복전</td>
+                            <td>2001</td>
+                          </tr>
+                          <tr>
+                            <td>백사계 6G 복전차</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>백사계 천복차</td>
+                            <td>2017</td>
+                          </tr>
+                          <tr>
+                            <td>백사계 천복차</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="3">흑전차</td>
+                            <td>백사계 흑전차</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td>백사계 흑전</td>
+                            <td>2012</td>
+                          </tr>
+                          <tr>
+                            <td>백사계 흑전 如意 1939(초익평)</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="1">화전차</td>
+                            <td>백사계 화전차</td>
+                            <td>2012</td>
+                          </tr>
+                          <tr>
+                            <td rowspan="3">주차</td>
+                            <td>백사계 열량차</td>
+                            <td>2014</td>
+                          </tr>
+                          <tr>
+                            <td>백사계 천량차</td>
+                            <td>2007</td>
+                          </tr>
+                          <tr>
+                            <td>백사계 천량차</td>
+                            <td>2019</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">광서 육보차, 오주차창 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>광서 육보차, 오주차창</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>보천동경, 19</td>
+                            <td>2009</td>
+                          </tr>
+                          <tr>
+                            <td>보천동경, 20</td>
+                            <td>2009</td>
+                          </tr>
+                          <tr>
+                            <td>육보차 0818</td>
+                            <td>2013</td>
+                          </tr>
+                          <tr>
+                            <td>육보차 사원</td>
+                            <td>2013</td>
+                          </tr>
+                          <tr>
+                            <td>삼학육보차 빈랑향 55021</td>
+                            <td>2015</td>
+                          </tr>
+                          <tr>
+                            <td>오주차창 삼학 육보 산차 경전 0211</td>
+                            <td>2017</td>
+                          </tr>
+                          <tr>
+                            <td>오주차창 삼학 육보차 1712</td>
+                            <td>2017</td>
+                          </tr>
+                          <tr>
+                            <td>오주차창 삼학 육보차 장족 삼월삼 고산차</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td>오주차창 대사 육보차 65007</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>오주차창 삼학 육보차 85001</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>오주차창 삼학 육보전차 1815</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td>오주차창 삼학 고산 대수병 육보차</td>
+                            <td>2021</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                  <li>
+                    <div class="ta_tit">
+                      <img src="images/tea_icon_01.png" alt="">안휘 육안차 종류
+                    </div>
+                    <div class="table_wrap scl_x">
+                      <p class="notice">테이블을 양옆으로 스크롤 해주세요</p>
+                      <table class="table_winelist">
+                        <caption>안휘 육안차</caption>
+                        <thead>
+                          <tr>
+                            <th>차</th>
+                            <th>연도</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>60년대 육안차</td>
+                            <td>1960</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>														
+                  </li>
+                </ul>
+              </div>
+              <!-- /흑차 리스트 -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="page_bottom"></div>
+  </section>
+  <section class="page page5 culture" id="page5">
+  <div class="page_top"></div>
+  <div class="page_container">
+    <div class="page4_wrap" id="all">
+        <h4>석란 차회</h4>
+        <div class="page4_layout_box">
+          <div class="culture_txt">
+            <h5>차회 안내</h5>
+            <p>
+              1. 매월 둘째 주 토요일, 오후 2시에 시작해서 5시 정도까지 진행합니다.<br><br>2. 테마는 월별로 다양하게 진행합니다. 중국 6대 차류 중 백차, 청차(오룡차), 홍차, 보이차, 그리고 흑차(안화흑차, 육보차, 육안차) 들을 골고루 경험해 보실 수 있습니다.<br><br>3. 차회가 진행되어감에 따라 참석하시는 분들께도 팽주 기회를 드립니다. 차를 내릴 줄 알아야 차를 드실 수 있기 때문이죠. 매월 향기로운 차와 더불어 <em>日日是好日</em>이 되시길 바랍니다.
+            </p>
+            <a class="tel" href="tel:010-9469-3354"><img src="images/phone_icon.png" alt=""> 010-9469-3354</a>
+          </div>
+          <!-- card slide -->
+          <div class="carousel">
+            <button class="carousel-button carousel-btn-left is-last"><span></span></button>
+            <div class="carousel-track-container">
+              <ul class="carousel-track">
+                <li class="carousel-slide current-slide">
+                  <div class="page4_con_outer_wrap"> 
+                    <div class="page4_con_txt_next">
+                      <strong class="page4_next_time">2021-07-10 토요일</strong>
+                      <ul class="page4_next_wrap">
+                      <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span> 오후 2시</span></li>
+                      <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>차공간 석란</span></li>
+                      <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010.9469.3354</span></li>
+                      </ul>
+                      <hr>
+                      <strong class="etc_txt">기타사항</strong>
+                      <p>시간이 허락되면 한 두종의 차를 더 시음할 수 있습니다.</p>
+                      <a class="arr">back</a>
+                    </div>
+                    <div class="page4_con_txt">
+                      <h6>석란 7월 차회</h6>
+                      <strong>테마 : 녹차 비교 시음 - feat. 황차</strong>
+                      <p>
+                        1. 사천성, 몽정감로, 2021<br>
+                        2. 절강성, 안길백차, 2018<br>
+                        3. 절강성, 서호용정, 2021<br> 
+                        4. 안휘성, 태평후괴, 2020<br> 
+                        5. 황차, 안휘성, 군산은침, 2020 
+                      </p>
+                      <!-- <span>2021-03-13</span> -->
+                      <a class="arr">more</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="carousel-slide">
+                  <div class="page4_con_outer_wrap"> 
+                    <div class="page4_con_txt_next">
+                      <strong class="page4_next_time">2021-06-12 토요일</strong>
+                      <ul class="page4_next_wrap">
+                      <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span> 오후 2시</span></li>
+                      <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>차공간 석란</span></li>
+                      <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010.9469.3354</span></li>
+                      </ul>
+                      <hr>
+                      <strong class="etc_txt">기타사항</strong>
+                      <p>시간이 허락되면 한 두종의 차를 더 시음할 수 있습니다.</p>
+                      <a class="arr">back</a>
+                    </div>
+                    <div class="page4_con_txt">
+                      <h6>석란 6월 차회</h6>
+                      <strong>테마 : 보이차 비교 시음</strong>
+                      <p>
+                        1. 생차 vs 숙차<br>
+                        맹해차창 7542, 07 vs 맹해차창 7572, 07<br>
+                        2. 대지차 vs 고수차<br>
+                        하관특급 청병, 2012 vs 연화정 이무고수 2010<br>  
+                        3. 어린차 vs 노차<br>
+                        이태룡 이무 마흑채, 2019 vs 70년대말 이무전차<br>  
+                      </p>
+                      <!-- <span>2021-03-13</span> -->
+                      <a class="arr">more</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="carousel-slide">
+                  <div class="page4_con_outer_wrap"> 
+                    <div class="page4_con_txt_next">
+                      <strong class="page4_next_time">2021-05-08 토요일</strong>
+                      <ul class="page4_next_wrap">
+                      <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span> 오후 2시</span></li>
+                      <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>차공간 석란</span></li>
+                      <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010.9469.3354</span></li>
+                      </ul>
+                      <hr style="border-style: dashed; border-color:#ccc;">
+                      <strong class="etc_txt">기타사항</strong>
+                      <p>시간이 허락되면 한 두종의 차를 더 시음할 수 있습니다.</p>
+                      <a class="arr">back</a>
+                    </div>
+                    <div class="page4_con_txt">
+                      <h6>석란 5월 차회</h6>
+                      <strong>테마 : 청차류 비교 시음</strong>
+                      <p>
+                        1. 민북오룡 : 구룡과 야생 대홍포, 2020<br>
+                        2. 민남오룡 : 안계 철관음, 2018<br>  
+                        3. 광동오룡 : 봉황단총 오동 밀란향, 2019<br>  
+                        4. 대만오룡, 청향 : 아리산 오룡, 2020<br>  	
+                        5. 대만오룡, 농향 : 정총 철관음, 2020<br>  	
+                      </p>
+                      <!-- <span>2021-03-13</span> -->
+                      <a class="arr">more</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="carousel-slide">
+                  <div class="page4_con_outer_wrap"> 
+                    <div class="page4_con_txt_next">
+                      <strong class="page4_next_time">2021-04-10 토요일</strong>
+                      <ul class="page4_next_wrap">
+                      <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span> 오후 2시</span></li>
+                      <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>차공간 석란</span></li>
+                      <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010.9469.3354</span></li>
+                      </ul>
+                      <hr style="border-style: dashed; border-color:#ccc;">
+                      <strong class="etc_txt">기타사항</strong>
+                      <p>시간이 허락되면 한 두종의 차를 더 시음할 수 있습니다.</p>
+                      <a class="arr">back</a>
+                    </div>
+                    <div class="page4_con_txt">
+                      <h6>석란 4월 차회</h6>
+                      <strong>테마 : 6대차류 개관 2</strong>
+                      <p>
+                        1. 홍차 : 정산소종 계원향, 2020<br>
+                        2. 대만 오룡 : 대우령, 2020 동차<br>  
+                        3. 보이생차 : 이무고수차, 죽로재, 2019<br>  
+                        4. 보이생차 : 맹해차창 태문 7542, 1999<br>
+                        5. 흑차 : 백사계 특제 복전, 1996<br>  	
+                      </p>
+                      <!-- <span>2021-03-13</span> -->
+                      <a class="arr">more</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="carousel-slide">
+                  <div class="page4_con_outer_wrap"> 
+                    <div class="page4_con_txt_next">
+                      <strong class="page4_next_time">2021-03-13 토요일</strong>
+                      <ul class="page4_next_wrap">
+                      <li class="page4_next_line"><img src="images/time_icon.png" alt=""><span class="page4_next_txt">시간<span></span> 오후 2시</span></li>
+                      <li class="page4_next_line"><img src="images/place_icon.png" alt=""><span class="page4_next_txt">장소<span></span>차공간 석란</span></li>
+                      <li class="page4_next_line"><img src="images/phone_icon.png" alt=""><span class="page4_next_txt">연락처<span></span>010.9469.3354</span></li>
+                      </ul>
+                      <hr style="border-style: dashed; border-color:#ccc;">
+                      <strong class="etc_txt">기타사항</strong>
+                      <p>시간이 허락되면 한 두종의 차를 더 시음할 수 있습니다.</p>
+                      <a class="arr">back</a>
+                    </div>
+                    <div class="page4_con_txt">
+                      <h6>석란 3월 차회</h6>
+                      <strong>테마 : 6대차류 개관 1</strong>
+                      <p>
+                        1. 백차 : 운남 고수 백차, 2017<br>
+                        2. 복건오룡 : 무이암차, 백계관, 2013<br>  
+                        3. 보이생차 : 중차공사 녹인청병, 2001<br>  
+                        4. 보이생차 : 맹해차창 태문 7542, 1999<br>
+                        5. 흑차 : 백사계 천량차, 2007<br>  	
+                      </p>
+                      <!-- <span>2021-03-13</span> -->
+                      <a class="arr">more</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <button class="carousel-button carousel-btn-right"><span></span></button>
+            <div class="carousel-nav">
+              <button class="carousel-indicator current-slide"></button>
+              <button class="carousel-indicator"></button>
+              <button class="carousel-indicator"></button>
+              <button class="carousel-indicator"></button>
+            </div>
+            <a class="scroll_x"><span></span></a>
+          </div>
+        <!-- //card slide -->
+      </div>
+    </div>
+    <div class="page_bottom"></div>
+  </div>
+  </section>
+  <!--갤러리영역  -->
+  <section class="page page6 gallery" id="page6">
+  <div class="page_top"></div>
+  <div class="page_container">
+    <h4>갤러리</h4>
+      <!-- Grid Gallery -->
+      <div class="grid-gallery swiper-container">
+        <ul class="swiper-wrapper">
+          <li class="masonry swiper-slide">
+            <a href="images/gal_img_1_960.jpg" class="swipebox">
+              <img src="images/gal_img_1_960.jpg" alt="석란 갤러리 이미지1">
+            </a>
+            <a href="images/gal_img_2_960.jpg" class="swipebox">
+              <img src="images/gal_img_2_960.jpg" alt="석란 갤러리 이미지2">
+            </a>
+            <a href="images/gal_img_3_960.jpg" class="swipebox">
+              <img src="images/gal_img_3_960.jpg" alt="석란 갤러리 이미지3">
+            </a>
+            <a href="images/gal_img_4_960.jpg" class="swipebox">
+              <img src="images/gal_img_4_960.jpg" alt="석란 갤러리 이미지4">
+            </a>
+            <a href="images/gal_img_5_960.jpg" class="swipebox">
+              <img src="images/gal_img_5_960.jpg" alt="석란 갤러리 이미지5">
+            </a>
+            <a href="images/gal_img_6_960.jpg" class="swipebox">
+              <img src="images/gal_img_6_960.jpg" alt="석란 갤러리 이미지6">
+            </a>
+            <a href="images/gal_img_7_960.jpg" class="swipebox">
+              <img src="images/gal_img_7_960.jpg" alt="석란 갤러리 이미지7">
+            </a>
+            <a href="images/gal_img_8_960.jpg" class="swipebox">
+              <img src="images/gal_img_8_960.jpg" alt="석란 갤러리 이미지8">
+            </a>
+          </li>
+          <li class="masonry swiper-slide">
+            <a href="images/gal_img_9_960.jpg" class="swipebox">
+              <img src="images/gal_img_9_960.jpg" alt="석란 갤러리 이미지9">
+            </a>
+            <a href="images/gal_img_10_960.jpg" class="swipebox">
+              <img src="images/gal_img_10_960.jpg" alt="석란 갤러리 이미지10">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next swiper-button-white" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+      <div class="swiper-button-prev swiper-button-white swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+  </div>
+  <div class="page_bottom"></div>
+  </section>
+  <!-- 지도 영역 -->
+  <section class="page page7 jido" id="page7">
+    <div class="jido_contents">
+        <div class="page_container">
+          <h4>오시는 길</h4>
+          <div class="jido_con_wrap">
+            <p>전라남도 나주시 그린로 379<br>포레루체 오피스텔 209호<br>(지번)빛가람동 279-4</p>
+            <a class="tel" href="tel:010-9469-3354"><img src="images/phone_icon.png" alt=""> 010-9469-3354</a>
+            <ul>
+              <li>좌석버스 02</li>
+              <li>나주버스 1160, 999</li>
+              <li>700, 701, 999, 1160, 7001, 셔틀 2, 그린 1</li>
+            </ul>
+          </div>
+          <div class="insta">
+            <img src="images/s_footer_logo.png" alt="하단로고">
+            <div class="insta_wrap">
+              <button type="button" id="insta_btn" onclick="window.open('https://instagram.com/seokran_cha?igshid=1uon6rtscqabs');">												  
+                <span>INSTAGRAM 팔로우하러가기 &gt;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="jido_img">
+        <img src="images/jido_images_pad.jpg" alt="석란 위치" usemap="#location">
+        <map name="location">
+          <area shape="circle" coords="510,485,80" href="http://naver.me/51Y3uH09" target="_blank" alt="포레루체 오피스텔 2층 석란">
+        </map>
+        <span class="here"></span>
+        <a href="http://naver.me/51Y3uH09" target="_blank" class="here_link"></a>
+      </div>
+      <div class="jido_footer">
+        <span class="jido_txt">사업자등록번호 : 325-08-01205 COPYRIGHT ⓒ 석란 ALL RIGHT RESERVED</span>
+      </div>
+  </section>
+
+</body>
+</html>
