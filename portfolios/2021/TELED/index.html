@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TELED - Teraenergy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="js/mCustomScrollbar/mCustomScrollbar.css">
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/jquery-easing.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="js/splitting.min.js"></script>
+  <script src="js/scrolla.jquery.min.js"></script>
+  <script src="js/mCustomScrollbar/mCustomScrollbar.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <div class="logo">
+        <a href="http://teraenergy.co.kr/teled/"><img src="img/logo.png" alt="스마트LED 로고"></a>
+      </div>
+      <ul class="gnb">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#support">Support</a></li>
+        <li class="manual"><a href="#none">Manual</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="layer"></div>
+  <div id="manual">
+    <button class="mn-close"><i class="bi bi-x-lg"></i></button>
+    <button class="nav-btn"><i class="bi bi-list"></i> 목차</button>
+    <div class="header">
+      <h2>TELED 매뉴얼</h2>
+    </div>
+    <nav>
+      <h3>TELED 매뉴얼</h3>
+      <ul>
+        <li class="on"><a href="#mn-login">1. 로그인</a></li>
+        <li><a href="#mn-main">2. 메인 대시보드</a></li>
+        <li><a href="#mn-usage">3. 전체 전력 사용량</a></li>
+        <li><a href="#mn-ctrl">4. 조명 컨트롤</a></li>
+        <li><a href="#mn-set">5. 조명 설정</a></li>
+        <li><a href="#mn-sensor">6. 온도/습도/공기질 센서</a></li>
+        <li><a href="#mn-user">7. 설정 > 계정정보</a></li>
+        <li><a href="#mn-logout">8. 설정 > 로그아웃</a></li>
+      </ul>
+    </nav>
+    <div class="contents">
+      <article id="mn-login">
+        <h2 class="blind">로그인</h2>
+        <div class="left">
+          <img src="img/manual-login.jpg" alt="로그인 화면">
+        </div>
+        <div class="right">
+          <div class="desc">
+            <em>1. 로그인</em>
+            <p>앱 실행시 첫 화면으로, 회원정보를 입력하고 로그인 합니다.</p>
+          </div>
+          <ul>
+            <li>① 아이디를 입력합니다.</li>
+            <li>② 비밀번호를 입력합니다.</li>
+            <li>③ 로그인합니다.</li>
+            <li>④ 아이디를 저장합니다.</li>
+            <li>⑤ 자동로그인을 등록합니다.</li>
+          </ul>
+        </div>
+      </article>
+      <article id="mn-main">
+        <h2 class="blind">메인</h2>
+        <div class="left">
+          <img src="img/manual-main.jpg" alt="메인 화면">
+        </div>
+        <div class="right">
+          <div class="desc">
+            <em>2. 메인 대시보드</em>
+            <p>로그인 후 첫 화면으로, 기능별 버튼과 현재 상태를 표시합니다.</p>
+          </div>
+          <ul>
+            <li>① <b>조명 컨트롤</b> 화면으로 이동합니다.</li>
+            <li>② <b>온도 센서</b> 화면으로 이동합니다.</li>
+            <li>③ <b>습도 센서</b> 화면으로 이동합니다.</li>
+            <li>④ <b>공기질 센서</b> 화면으로 이동합니다.</li>
+            <li>⑤ 현재 위치의 외부 날씨 정보를 표시합니다.</li>
+            <li>⑥ 현재 실내의 온도/습도 정보를 표시합니다.</li>
+            <li>⑦ 전체 조명의 전력사용량을 표시합니다.</li>
+            <li>⑧ 자세한 전력사용량 화면으로 이동합니다.</li>
+            <li>⑨ <b>설정</b> 화면으로 이동합니다.</li>
+          </ul>
+        </div>
+      </article>
+      <article id="mn-usage">
+        <h2 class="blind">전체 전력 사용량</h2>
+        <div class="left">
+          <img src="img/manual-usage.jpg" alt="전체 전력 사용량 화면">
+        </div>
+        <div class="right">
+          <div class="desc">
+            <em>3. 전체 전력 사용량</em>
+            <p>전체 조명의 전력 사용량을 표 형태로 표시합니다.</p>
+          </div>
+          <ul>
+            <li>① 기능별 버튼을 클릭 시, 해당 화면으로 이동합니다.</li>
+            <li>② 전체 조명의 전력 사용량을 일별로 보여줍니다.</li>
+            <li>③ 창을 닫고 메인 대시보드 화면으로 이동합니다.</li>
+            <li>④ 설정 화면으로 이동합니다.</li>
+          </ul>
+        </div>
+      </article>
+      <article id="mn-ctrl">
+        <h2 class="blind">조명컨트롤</h2>
+        <div class="left">
+          <img src="img/manual-light-ctrl.jpg" alt="조명컨트롤 화면">
+        </div>
+        <div class="right">
+          <div class="desc">
+            <em>4. 조명 컨트롤</em>
+            <p>개별 조명의 상태 확인 및 ON/OFF를 간단한 클릭으로 구현합니다.</p>
+          </div>
+          <ul>
+            <li>① 각 조명의 상태 확인 및 ON/OFF를 컨트롤 할 수 있습니다.</li>
+            <li>② 조명 설정 화면으로 이동합니다.</li>
+          </ul>
+        </div>
+      </article>
+      <article id="mn-set">
+        <h2 class="blind">조명설정</h2>
+        <div class="left">
+          <img src="img/manual-light-set.jpg" alt="조명설정 화면">
+        </div>
+        <div class="right">
+          <div class="desc">
+            <em>5. 조명 설정</em>
+            <p>조명(개별, 그룹)의 반응형 점등, 조도 수동 조정, ON/OFF를 구현합니다.</p>
+          </div>
+          <ul>
+            <li>① 관리할 조명 리스트를 나타냅니다.</li>
+            <li>② 조명 컨트롤 화면으로 이동합니다.</li>
+            <li>③ 조도의 자동 반응 점등을 설정합니다.</li>
+            <li>④ 해당 개별/그룹 조명을 ON/OFF 합니다.</li>
+            <li>⑤ 해당 개별/그룹 조명의 밝기를 설정합니다.</li>
+          </ul>
+        </div>
+      </article>
+      <article id="mn-sensor">
+        <h2 class="blind">센서</h2>
+        <div class="left">
+          <div class="popup_swiper">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="img/manual-temperature.jpg" alt="온도센서 화면">
+              </li>
+              <li class="swiper-slide">
+                <img src="img/manual-humidity.jpg" alt="습도센서 화면">
+              </li>
+              <li class="swiper-slide">
+                <img src="img/manual-air.jpg" alt="공기질센서 화면">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <div class="desc">
+            <em>6. 온도/습도/공기질 센서</em>
+            <p>온도/습도/공기질 센서로 받은 값을 그래프 형태로 알기 쉽게 표시합니다.</p>
+          </div>
+          <ul>
+            <li>① 현재 실내 온도/습도/공기질을 표시합니다.</li>
+            <li>② 날짜별 표준 온도/습도/공기질을 나타냅니다.</li>
+            <li>③ 시간별 표준 온도/습도/공기질을 나타냅니다.</li>
+            <li>④ 일별 평균 온도/습도/공기질을 표로 더 자세히 볼 수 있습니다.</li>
+          </ul>
+        </div>
+      </article>
+      <article id="mn-user">
+        <h2 class="blind">계정정보</h2>
+        <div class="left">
+          <img src="img/manual-user.jpg" alt="설정 > 계정정보 화면">
+        </div>
+        <div class="right">
+          <div class="desc">
+            <em>7. 설정 > 계정정보</em>
+            <p>계정 정보를 확인하고, 비밀번호를 변경할 수 있습니다.</p>
+          </div>
+          <ul>
+            <li>① 설정 화면의 메뉴들을 표시합니다.</li>
+            <li>② 가입된 아이디를 표시합니다.</li>
+            <li>③ 비밀번호 변경 화면으로 이동합니다.</li>
+          </ul>
+        </div>
+      </article>
+      <article id="mn-logout">
+        <h2 class="blind">로그아웃</h2>
+        <div class="left">
+          <img src="img/manual-logout.jpg" alt="설정 > 로그아웃 화면">
+        </div>
+        <div class="right">
+          <div class="desc">
+            <em>8. 설정 > 로그아웃</em>
+            <p>현재 계정에서 로그아웃합니다.</p>
+          </div>
+          <ul>
+            <li>① 로그아웃 시, 로그인 화면으로 이동합니다.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+  <section class="visual" id="home">
+    <div class="visual_bg"></div>
+    <div class="inner animate" data-animate="motion">
+      <div class="left">
+        <em>Light your way</em>
+        <h2 data-splitting>나에게 맞춘 <br>나만의 Smart LED</h2>
+        <a href="#summary" class="start_btn">시작하기</a>
+      </div>
+      <div class="right">
+        <div class="device">
+          <img src="img/visual_img1.png" alt="스마트LED 태블릿 화면">
+        </div>
+        <div class="object obj1"></div>
+        <div class="object obj2"></div>
+      </div>
+    </div>
+  </section>
+  <section class="summary" id="summary">
+    <div class="inner animate" data-animate="motion">
+      <div class="title_box">
+        <em>솔루션 개요</em>
+        <h3 data-splitting><span>IoT기반의 스마트조명 TELED</span></h3>
+        <span>TELED 최고의 스마트한 경험을 제공합니다.</span>
+      </div>
+      <div class="contents">
+        <ul class="boxes animate" data-animate="motion">
+          <li class="box animate" data-animate="motion" data-delay=".1s">
+            <h4>글로벌 IoT 클라우드</h4>
+            <p>
+              글로벌 IoT 클라우드 플랫폼으로 스마트 비즈니스 플랫폼을 구축
+            </p>
+          </li>
+          <li class="box animate" data-animate="motion" data-delay=".2s">
+            <h4>시장패러다임 전환</h4>
+            <p>
+              일반 LED 제조업에서 SmartLED 시장의 패러다임으로 전환하여 스마트 조명 시스템 사업으로 추진합니다. 
+            </p>
+          </li>
+          <li class="box animate" data-animate="motion" data-delay=".3s">
+            <h4>실시간 모니터링</h4>
+            <p>
+              실내조명의 점소등 상태 및 이상유무를 IoT통신으로 데이터를 송수신하여 개인  가구 혹은 기업 사무실 등의 원격에 실내조명을 제어 및 모니터링 합니다.
+            </p>
+          </li>
+          <li class="box animate" data-animate="motion" data-delay=".4s">
+            <h4>원격제어 및 적극적인 유지보수</h4>
+            <p>
+              원격제어를 통해 실내에 설치된 모든 조명의 개별 제어 및 감시가 가능하며, 사용량 추적관리기능으로 조명의 수명 및 장애등 운용상황 파악 합니다.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="features animate" data-animate="motion">
+    <div class="title_box">
+      <em>제품 경쟁력</em>
+      <h3 data-splitting>왜<span style="font-family: 'notosansKR' !important; font-size: 2.5rem;  font-weight: bold; color: #191f28">,</span> TELED와 <br>함께해야 하나요</h3>
+    </div>
+    <div class="contents">
+      <div class="contents_inner">
+        <div class="features_swiper animate" data-animate="motion">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <h4>시스템의<br>유연한 운용성</h4>
+              <p>
+                기존 운용중인 시스템과 상관없이<br> 다양한 기술을 적용하여 호환할<br> 수 있는 개방형 프로그램을 설계 합니다.
+              </p>
+            </li>
+            <li class="swiper-slide">
+              <h4>뛰어난 보안<br>안전성 보장</h4>
+              <p>
+                최신 데이터 암호화 기술을 적용하여<br> 외부로부터 시스템을 보호 합니다.
+              </p>
+            </li>
+            <li class="swiper-slide">
+              <h4>어디서든<br>편리한 접근성</h4>
+              <p>
+                실내조명의 상태를 컴퓨터 및<br> 모바일 기기에서 쉽게 액세스할 수 있도록 합니다.
+              </p>
+            </li>
+            <li class="swiper-slide">
+              <h4>최적의<br>커스터마이징</h4>
+              <p>
+                수요기업의 니즈를 반영하여 기능의<br> 추가 및 변경이 가능하며, 다양한<br> 환경에 최적화된 기능을 발휘할<br> 수 있도록 시스템을 구축 합니다.
+              </p>
+            </li>
+            <li class="swiper-slide">
+              <h4>적극적인<br>유지보수</h4>
+              <p>
+                원활한 시스템 운영을 위하여<br> 전담 서비스 인력이 배치되어<br> 개발 및 유지 보수가 신속합니다.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="arrows">
+      <button class="prev-btn"></button>
+      <button class="next-btn"></button>
+    </div>
+  </section>
+  <section class="led_function func1" id="features">
+    <div class="inner animate" data-animate="motion">
+      <div class="title_box">
+        <em>제품 기능</em>
+        <h3 data-splitting>나의 라이프스타일에 딱 맞도록</h3>
+      </div>
+      <div class="contents">
+        <div class="led_func_swiper">
+          <ul class="col3 swiper-wrapper">
+            <li class="box box1 swiper-slide">
+              <div class="imgs">
+                <ul class="imgs_wrap animate" data-animate="motion">
+                  <li class="img animate" data-animate="motion" data-delay=".1s"><img src="img/sec3_img1.png" alt=""></li>
+                  <li class="img animate" data-animate="motion" data-delay=".2s"><img src="img/sec3_img2.png" alt=""></li>
+                  <li class="img animate" data-animate="motion" data-delay=".3s"><img src="img/sec3_img3.png" alt=""></li>
+                  <li class="img animate" data-animate="motion" data-delay=".4s"><img src="img/sec3_img4.png" alt=""></li>
+                </ul>
+              </div>
+              <div class="txt">
+                <span>사용 현황 실시간 모니터링</span>
+                <h4>다기능 센싱</h4>
+                <p>
+                  실내조명의 주위의 조도, 보행자 이동량, 미세먼지, 공기오염등 정보를  수집, 분석, 활용
+                </p>
+              </div>
+            </li>
+            <li class="box box2 swiper-slide">
+              <div class="imgs">
+                <div class="panel_wrap">
+                  <div class="panel">
+                    <img src="img/panel.png" alt="">
+                  </div>
+                  <div class="toggle">
+                    <span class="light-btn"></span>
+                    <span class="dark-btn"></span>
+                    <span class="bg"></span>
+                  </div>
+                  <small class="toggle-txt">* 토글 버튼을 눌러보세요.</small>
+                </div>
+              </div>
+              <div class="txt">
+                <span>라이프스타일 맞춘 조명 연출</span>
+                <h4>지능형 점소등 및 디밍제어</h4>
+                <p>
+                  실내의 상황이나 실외 날씨, 밝기 등을 분석하여 개별 조명의 점소등 및 디밍제어를 가능
+                </p>
+              </div>
+            </li>
+            <li class="box box3 swiper-slide">
+              <div class="imgs">
+                <img src="img/sec3_img5.png" alt="">
+              </div>
+              <div class="txt">
+                <span>일일이 키고 끄는 불편함 없이</span>
+                <h4>그룹 장치 제어</h4>
+                <p>
+                  조명의 위치, 기능 등에 따른 그룹별 관리 그룹을 지정하고 한번에 제어
+                </p>
+              </div>
+            </li>
+          </ul>
+          <div class="arrows">
+            <button class="prev-btn"></button>
+            <button class="next-btn"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="led_function func2">
+    <div class="inner animate" data-animate="motion">
+      <div class="title_box">
+        <em>제품 기능</em>
+        <h3 data-splitting>TELED와 함께하는 우리집</h3>
+      </div>
+      <div class="contents">
+        <div class="led_func_swiper swiper2">
+          <ul class="col3 swiper-wrapper">
+            <li class="box box1 swiper-slide">
+              <div class="imgs">
+                <img src="img/sec4_img1.png" alt="">
+              </div>
+              <div class="txt">
+                <h4>원격검침</h4>
+                <p>
+                  실내조명 전력 사용량의 원격검침으로 에너지를 체계적으로 관리 가능
+                </p>
+              </div>
+            </li>
+            <li class="box box2 swiper-slide">
+              <div class="imgs">
+                <img src="img/sec4_img2.png" alt="">
+              </div>
+              <div class="txt">
+                <h4>양방향 통신</h4>
+                <p>
+                  IoT통신 기반으로 구축하여 실내조명 제어와 모니터링 신호를 송수신
+                </p>
+              </div>
+            </li>
+            <li class="box box3 swiper-slide">
+              <div class="imgs">
+                <img src="img/sec4_img3.png" alt="">
+              </div>
+              <div class="txt">
+                <h4>외부정보연동</h4>
+                <p>
+                  날씨, 미세먼지 등의 생활에 밀접한 환경정보를 제공
+                </p>
+              </div>
+            </li>
+          </ul>
+          <div class="arrows">
+            <button class="prev-btn"></button>
+            <button class="next-btn"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="how_to_use">
+    <div class="inner animate" data-animate="motion">
+      <div class="title_box">
+        <em>활용방안</em>
+        <h3 data-splitting>TELED<span style="font-family: 'notosansKR' !important; font-size: 2.5rem; font-weight: bold; color: #191f28;">,</span> 미래를 향한 더 큰 변화</h3>
+        <span>다양한 센서(온도, 습도, 조도, 가스, 인체감지 등)를 활용한 지능형 통합관제솔루션으로 <br>상태정보를 확인할 수 있는 기능을 추가하는 등의 유기적 기술개발</span>
+      </div>
+      <div class="contents">
+        <ul class="banners animate" data-animate="motion">
+          <li class="banner fac">
+            <h4>스마트공장</h4>
+            <p>
+              작업 공정이나 상황, 개별 및 그룹별로 <br>밝기를 제어해 에너지를 절감합니다. 
+            </p>
+          </li>
+          <li class="banner farm">
+            <h4>스마트농장</h4>
+            <p>
+              특정 파장의 빛을 내 식물 생장속도를 제어하고 <br>영양분 함유량을 높이는 식물생장용 LED 조명을 적용합니다.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="support" id="support">
+    <div class="inner animate" data-animate="motion">
+      <h3 data-splitting>
+        솔루션을 도입하고 싶으신가요?<br>
+        TELED가 체계적으로 도와드립니다.
+      </h3>
+      <div class="contents animate" data-animate="motion" data-delay="1.5s">
+        <ul class="col3">
+          <li class="box">
+            <span class="ico"></span>
+            <div class="txt">
+              <h4>기술 지원 서비스</h4>
+              <p>
+                제품 개발 및 기타 작업과 관련된 기술 문제를 처리합니다.
+              </p>
+            </div>
+          </li>
+          <li class="box">
+            <span class="ico"></span>
+            <div class="txt">
+              <h4>프로젝트 관리</h4>
+              <p>
+                프로젝트 구성원에게 라이브 세션과, 비디오 또는 오디오 회의를 가질 수 있습니다.
+              </p>
+            </div>
+          </li>
+          <li class="box">
+            <span class="ico"></span>
+            <div class="txt">
+              <h4>온라인 고객 서비스</h4>
+              <p>
+                신속하게 문제점을 찾아 고객을 위한 지침을 제공합니다.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <div class="interfaces">
+          <h5 class="animate" data-animate="motion">TELED는 다양한 플랫폼(인터페이스)를 지원합니다.</h5>
+          <div class="interface_swiper">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="img/windows.png" alt="윈도우즈">
+                <span>윈도우</span>
+              </li>
+              <li class="swiper-slide">
+                <img src="img/apple.png" alt="애플">
+                <span>맥OS</span>
+              </li>
+              <li class="swiper-slide">
+                <img src="img/android.png" alt="안드로이드">
+                <span>안드로이드</span>
+              </li>
+              <li class="swiper-slide">
+                <img src="img/iOS.png" alt="IOS">
+                <span>IOS</span>
+              </li>
+              <li class="swiper-slide">
+                <img src="img/chrome.png" alt="구글 크롬">
+                <span>Chrome</span>
+              </li>
+              <li class="swiper-slide">
+                <img src="img/smart_watch.png" alt="스마트워치">
+                <span>스마트워치</span>
+              </li>
+              <li class="swiper-slide">
+                <img src="img/ellipsis.png" alt="기타">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="inner">
+      <div class="left">
+        <div class="f_logo">
+          <a href="#"><img src="img/f_logo.png" alt="스마트LED 로고"></a>
+        </div>
+        <address>
+          (58325) 전라남도 나주시 그린로 379 (빛가람동), 포레루체 210호<br>210 ForeLuce, 379, Green-ro,Naju-si, Jeollanam-do
+        </address>
+        <span class="copy">COPYRIGHT © TERAENERGY INC. ALL RIGHTS RESERVED.</span>
+      </div>
+      <div class="right">
+        <em>고객센터</em>
+        <h6>061-930-7071</h6>
+        <span>평일 10:00 ~ 18:00 (주말/공휴일 제외)</span>
+        <address>E-mail: saram@teraenergy.co.kr</address>
+      </div>
+    </div>
+  </footer>
+  <button class="to-top"><i class="bi bi-arrow-up-short"></i></button>
+</body>
+</html>
