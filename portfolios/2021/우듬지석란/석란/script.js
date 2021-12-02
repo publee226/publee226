@@ -1,6 +1,5 @@
 // JavaScript Document
 $(function () {
-  //怨좎젙��쓣 �대┃�섎㈃ �대떦 ��ぉ�� �섏씠吏�濡� �ㅽ겕濡ㅻ릺硫댁꽌 �대룞��
   window.addEventListener("wheel", function (event) {
     event.preventDefault();
   }, { passive: false });//addEventListener
@@ -8,20 +7,17 @@ $(function () {
   //�먯깋
   var $pages = $(".page");
   var $html = $("html");
-  //�꾩옱 酉고룷�몄뿉 �쒖떆�섎뒗 �섏씠吏� 踰덊샇
   var pageNum = 1;   //page
   var scrolling = false;
-  //留덉�留� �섏씠吏� 踰덊샇 => 4
   var lastPage = $pages.length;
 
 
-  //�꾩옱 �섏씠吏� 踰덊샇 怨꾩궛  => 1
   pageNum = Math.round($(window).scrollTop() / $(window).height()) + 1;
 
-  //怨꾩궛�� �섏씠吏��� 留욎떠 �ㅽ겕濡ㅽ븿
   $html.animate({ "scrollTop": (pageNum - 1) * $(window).height() }, 100);
 
-  /* smooth scroll to top */
+	
+  // to-top 버튼 클릭 시,부드럽게 스크롤 이동
   $(".to-top").on("click", function (e) {
     e.preventDefault();
     const href = $(this).attr("href");
@@ -35,55 +31,45 @@ $(function () {
     $('.fixedIcon > ul > li:not(:first-child)').removeClass('fixedOn');
   });
 
-  //留덉슦�� �� 踰꾪듉 援대━硫�
+	
   $(window).on("wheel", function (event) {
     if (scrolling) return;
 
     if (event.originalEvent.deltaY > 0) {
       if (pageNum == lastPage) return;
-
-      pageNum++;//�ㅼ쓬 �섏씠吏�濡� �대룞
-      
+      pageNum++;
     } else {
       if (pageNum == 1) return;
-
-      pageNum--; //�댁쟾 �섏씠吏�濡� �대룞
-      
+      pageNum--;
     }
 
-    //scrollPage �⑥닔瑜� �댁슜�� 怨꾩궛�대넃�� page濡� �대룞
     scrollPage();
 
-  });/* wheel �대깽�� */
+  });
 
 
   var $bullet = $(".fixedIcon > ul");
   var $item = $(".fixedIcon > ul > li");
 
   $item.find("a").on("click", function (e) {
-    e.preventDefault(); //湲곕낯�대깽�� �쒓굅
+    e.preventDefault();
 
     pageNum_aPos = $(this).attr("href");
     var pageNum_aPos_ln = pageNum_aPos.length;
-    pageNum = parseInt(pageNum_aPos.substr(5, 1)); //�レ옄濡� 蹂���
+    pageNum = parseInt(pageNum_aPos.substr(5, 1));
 
-    //留뚯빟 pagenum�� 紐뉕��� �댁긽�대㈃ if臾� �ㅽ뻾�� ��.
     if (pageNum_aPos_ln >= 7) {
-      // alert("7湲��먯씠��"); 
       pageNum = parseInt(pageNum_aPos.substr(5, 2)); //10
     }
 
-    //scrollPage �⑥닔瑜� �댁슜�� 怨꾩궛�대넃�� page濡� �대룞
     scrollPage();
 
-  });/* a�대┃ �대깽�� */
+  });
 
 
   
-  /* first bullet default */
   $bullet.children(":first").addClass("fixedOn");
 
-  /* page1: hide to-top button */ 
   var page2 = document.getElementById("page2");
   var page2Top = page2.offsetTop;
 
@@ -95,20 +81,17 @@ $(function () {
     }
   });
 
-  /* scrollPage 함수 */
+	
+	
   function scrollPage() {
 
-    //?�크�? ?�작?�시
     scrolling = true;
 
-    //?�이�?�? ?�크�? ?? ?? ?�이�?�? ?��??�는 블릿?? 강조
     $bullet.children().removeAttr("class").eq(pageNum - 1).addClass("fixedOn");
   
     var position = $(`#page${pageNum}`).offset();
   
-    //html?�소?? aniamte메서?��? ?�용?? 계산?? ?�치�? ?�크�?
     $html.animate({"scrollTop": position.top}, function() {
-        //animate 메서?�로 ?�성?? ?�과�? ?�나�?, �? ?�크롤이 ?�나�? ?�크롤이 ?�났?�을 ?�시.
         scrolling = false;
     })
 
@@ -120,12 +103,11 @@ $(function () {
 
 
 
-  //�대떦 �ъ쭊 src 泥댄겕�섍린
   var chk = 0;
 
   $(".page4 .page4_img_wrap > li").on("click", function (event) {
-    //湲곕낯 �대깽�� �쒓굅�섍린
     event.preventDefault();
+	  
     if (chk == 0) {
       $(this).find(".page4_con_txt_next").css('display', "block");
       chk = 1;
@@ -169,8 +151,6 @@ $(function () {
 
 
 
-  //scrollTop踰꾪듉�� �대┃�섎㈃ 泥ロ럹�댁�濡� �щ씪媛��꾨줉 留뚮뱺��.
-  //�꾩옱 �붾㈃�� 蹂댁씠�� �섏씠吏��� 踰덊샇瑜� �섑��대뒗 蹂���
   var page = 1; //page
   var scrolling = false;
 
@@ -180,21 +160,19 @@ $(function () {
 
   $scroll_top.click(function () {
     $("html").animate({ "scrollTop": 0 }, 300, function () {
-      page = 1; //留⑥쐞濡� �щ씪媛�硫� page = 1 �� 泥섏쓬 媛믪쑝濡� 珥덇린�� �쒕떎.
+      page = 1;
     });
     return false;
   });
 
-  //�곕벉吏� 臾명솕�됱궗 img �대┃�� �대�吏� 蹂�寃�
 
 
-
-  /* culture : 클릭 시 카드 앞/뒷면 전환 */
+  // culture : 클릭 시 카드 앞/뒷면 전환
   var chk = 0;
 
   $(".carousel-track > li").on("click", function (event) {
-    //湲곕낯 �대깽�� �쒓굅�섍린
     event.preventDefault();
+	  
     if (chk == 0) {
       $(this).find(".page4_con_txt_next").css({'display': 'flex', 'flex-direction': 'column', 'justify-content': 'center'});
       chk = 1;
@@ -290,7 +268,7 @@ $(function () {
 
 
 
-  // grid-gallery swiper + swipebox
+  // 갤러리 : Swiper 슬라이더
   var galleryGrid = new Swiper('.gallery .grid-gallery', {
     spaceBetween: 10,
     navigation: {
@@ -304,8 +282,6 @@ $(function () {
   } )( jQuery );
   
 
-
-  // tab으로 focus 후 enter하면 작동
   window.onload = function(){
     document.querySelector('.home_btn').addEventListener('keyup', (e)=>{
       if (e.keyCode === 13) {
@@ -318,8 +294,8 @@ $(function () {
 
 
 
-
-  /* mobile menu */
+	
+  // 모바일 메뉴
   $('.mobile_btn').click(function(){
     $(this).toggleClass('active');
     $('.fixedIcon, #home_btn').toggleClass('active');
@@ -357,7 +333,7 @@ $(function () {
   $('img[usemap]').rwdImageMaps();
 
 
-  /* mobile, tablet: to-top bottom 위치 조정 */ 
+  // mobile, tablet: to-top bottom 위치 조정
   if(windowWidth <= 1024) {
 
     var jidoTop = $('.jido').offset().top;
